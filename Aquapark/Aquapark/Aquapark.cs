@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.OracleClient;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
 
@@ -28,12 +29,14 @@ namespace Aquapark
         {
             try
             {
-                var connectionString = "Data Source=XE;User Id=Aquapark;Password=7zmty6q2e;";
-                using (var connection = new OracleConnection(connectionString))
+                //ac chyba jednak nie ogarniemy tego tak bo ja nie moge odpalać i nie iwdzie jaki masz bledy, musimy ogarn team viewera 
+                //
+                var connectionString = "Data Source=XE;User Id=aquapark;Password=123;";
+                using (var connection = new Oracle.ManagedDataAccess.Client.OracleConnection(connectionString))
                 {
                     connection.Open();
-                    var command = new OracleCommand("SELECT * FROM Aquapark.Customers", connection);
-                    var oracleDataAdapter = new OracleDataAdapter(command);
+                    var command = new Oracle.ManagedDataAccess.Client.OracleCommand("SELECT * FROM Aquapark.Customers", connection);
+                    var oracleDataAdapter = new Oracle.ManagedDataAccess.Client.OracleDataAdapter(command);
                     var dataSet = new DataSet();
                     oracleDataAdapter.Fill(dataSet);
                     if (dataSet.Tables.Count > 0)
