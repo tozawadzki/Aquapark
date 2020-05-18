@@ -1,0 +1,49 @@
+--------------------------------------------------------
+--  File created - poniedzia³ek-maja-18-2020   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table ENTRANCES
+--------------------------------------------------------
+
+  CREATE TABLE "AQUAPARK"."ENTRANCES" 
+   (	"ID" NUMBER, 
+	"WATCHID" NUMBER, 
+	"ENTRANCEMETHODID" NUMBER, 
+	"TIME" DATE, 
+	"CUSTOMERID" NUMBER(1,0), 
+	"COLUMN1" NUMBER(*,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+REM INSERTING into AQUAPARK.ENTRANCES
+SET DEFINE OFF;
+--------------------------------------------------------
+--  DDL for Index ENTRANCE_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "AQUAPARK"."ENTRANCE_PK" ON "AQUAPARK"."ENTRANCES" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  Constraints for Table ENTRANCES
+--------------------------------------------------------
+
+  ALTER TABLE "AQUAPARK"."ENTRANCES" ADD CONSTRAINT "ENTRANCE_PK" PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "AQUAPARK"."ENTRANCES" MODIFY ("WATCHID" NOT NULL ENABLE);
+  ALTER TABLE "AQUAPARK"."ENTRANCES" MODIFY ("ENTRANCEMETHODID" NOT NULL ENABLE);
+  ALTER TABLE "AQUAPARK"."ENTRANCES" MODIFY ("TIME" NOT NULL ENABLE);
+  ALTER TABLE "AQUAPARK"."ENTRANCES" MODIFY ("CUSTOMERID" NOT NULL ENABLE);
+  ALTER TABLE "AQUAPARK"."ENTRANCES" MODIFY ("COLUMN1" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Ref Constraints for Table ENTRANCES
+--------------------------------------------------------
+
+  ALTER TABLE "AQUAPARK"."ENTRANCES" ADD CONSTRAINT "FK_ENTRANCEMETHODID" FOREIGN KEY ("ENTRANCEMETHODID")
+	  REFERENCES "AQUAPARK"."ENTRANCEMETHOD" ("ID") ENABLE;
+  ALTER TABLE "AQUAPARK"."ENTRANCES" ADD CONSTRAINT "FK_WATCHID_ENTRANCE" FOREIGN KEY ("WATCHID")
+	  REFERENCES "AQUAPARK"."WATCHES" ("ID") ENABLE;
+  ALTER TABLE "AQUAPARK"."ENTRANCES" ADD CONSTRAINT "CUSTOMERID" FOREIGN KEY ("CUSTOMERID")
+	  REFERENCES "AQUAPARK"."CUSTOMERS" ("ID") ENABLE;

@@ -1,37 +1,31 @@
 --------------------------------------------------------
---  File created - poniedzia³ek-marca-23-2020   
+--  File created - poniedzia³ek-maja-18-2020   
 --------------------------------------------------------
 --------------------------------------------------------
---  DDL for Table EXIT
+--  DDL for Table TRANSACTIONTYPES
 --------------------------------------------------------
 
-  CREATE TABLE "AQUAPARK"."EXIT" 
+  CREATE TABLE "AQUAPARK"."TRANSACTIONTYPES" 
    (	"ID" NUMBER, 
-	"WATCHID" NUMBER, 
-	"TIME" DATE
+	"NAME" VARCHAR2(30 BYTE)
    ) SEGMENT CREATION DEFERRED 
   PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
  NOCOMPRESS LOGGING
   TABLESPACE "USERS" ;
-REM INSERTING into AQUAPARK.EXIT
+REM INSERTING into AQUAPARK.TRANSACTIONTYPES
 SET DEFINE OFF;
 --------------------------------------------------------
---  DDL for Index EXIT_PK
+--  DDL for Index TRANSACTIONTYPE_PK
 --------------------------------------------------------
 
-  CREATE UNIQUE INDEX "AQUAPARK"."EXIT_PK" ON "AQUAPARK"."EXIT" ("ID") 
+  CREATE UNIQUE INDEX "AQUAPARK"."TRANSACTIONTYPE_PK" ON "AQUAPARK"."TRANSACTIONTYPES" ("ID") 
   PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   TABLESPACE "USERS" ;
 --------------------------------------------------------
---  Constraints for Table EXIT
+--  Constraints for Table TRANSACTIONTYPES
 --------------------------------------------------------
 
-  ALTER TABLE "AQUAPARK"."EXIT" ADD CONSTRAINT "EXIT_PK" PRIMARY KEY ("ID")
+  ALTER TABLE "AQUAPARK"."TRANSACTIONTYPES" ADD CONSTRAINT "TRANSACTIONTYPE_PK" PRIMARY KEY ("ID")
   USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   TABLESPACE "USERS"  ENABLE;
---------------------------------------------------------
---  Ref Constraints for Table EXIT
---------------------------------------------------------
-
-  ALTER TABLE "AQUAPARK"."EXIT" ADD CONSTRAINT "FK_WATCHID_EXIT" FOREIGN KEY ("WATCHID")
-	  REFERENCES "AQUAPARK"."WATCH" ("ID") ENABLE;
+  ALTER TABLE "AQUAPARK"."TRANSACTIONTYPES" MODIFY ("NAME" NOT NULL ENABLE);

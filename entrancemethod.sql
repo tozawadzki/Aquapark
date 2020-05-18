@@ -1,5 +1,5 @@
 --------------------------------------------------------
---  File created - poniedzia³ek-marca-23-2020   
+--  File created - poniedzia³ek-maja-18-2020   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Table ENTRANCEMETHOD
@@ -28,3 +28,4 @@ SET DEFINE OFF;
   ALTER TABLE "AQUAPARK"."ENTRANCEMETHOD" ADD CONSTRAINT "ENTRANCEMETHOD_PK" PRIMARY KEY ("ID")
   USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "AQUAPARK"."ENTRANCEMETHOD" MODIFY ("NAME" NOT NULL ENABLE);
