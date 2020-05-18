@@ -56,10 +56,37 @@
     <Compile Include="Aquapark.Designer.cs">
       <DependentUpon>Aquapark.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tables2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables2.Designer.cs">
+      <DependentUpon>Tables2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables1.Designer.cs">
+      <DependentUpon>Tables1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entrance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entrance.Designer.cs">
+      <DependentUpon>Entrance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Aquapark.resx">
       <DependentUpon>Aquapark.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables2.resx">
+      <DependentUpon>Tables2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables1.resx">
+      <DependentUpon>Tables1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entrance.resx">
+      <DependentUpon>Entrance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

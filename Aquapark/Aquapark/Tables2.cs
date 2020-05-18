@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Aquapark
 {
-    public partial class Aquapark : Form
+    public partial class Tables2 : Form
     {
-        public Aquapark()
+        public Tables2()
         {
             InitializeComponent();
         }
