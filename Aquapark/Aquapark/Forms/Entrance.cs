@@ -32,7 +32,7 @@ namespace Aquapark
             try
             {
                 CreateCustomer();
-                CreateEntrance();
+                //CreateEntrance();
                 Aquapark aquaparkForm = new Aquapark();
                 aquaparkForm.Show();
                 this.Hide();
