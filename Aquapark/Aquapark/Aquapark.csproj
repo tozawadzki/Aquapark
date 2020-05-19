@@ -50,42 +50,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Aquapark.cs">
+    <Compile Include="Forms\Aquapark.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Aquapark.Designer.cs">
+    <Compile Include="Forms\Aquapark.Designer.cs">
       <DependentUpon>Aquapark.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tables2.cs">
+    <Compile Include="Forms\Tables2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tables2.Designer.cs">
+    <Compile Include="Forms\Tables2.Designer.cs">
       <DependentUpon>Tables2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tables1.cs">
+    <Compile Include="Forms\Tables1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tables1.Designer.cs">
+    <Compile Include="Forms\Tables1.Designer.cs">
       <DependentUpon>Tables1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Entrance.cs">
+    <Compile Include="Forms\Entrance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Entrance.Designer.cs">
+    <Compile Include="Forms\Entrance.Designer.cs">
       <DependentUpon>Entrance.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Services\DbConnection.cs" />
+    <Compile Include="Services\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Aquapark.resx">
+    <Compile Include="Services\Query.cs" />
+    <EmbeddedResource Include="Forms\Aquapark.resx">
       <DependentUpon>Aquapark.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tables2.resx">
+    <EmbeddedResource Include="Forms\Tables2.resx">
       <DependentUpon>Tables2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tables1.resx">
+    <EmbeddedResource Include="Forms\Tables1.resx">
       <DependentUpon>Tables1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Entrance.resx">
+    <EmbeddedResource Include="Forms\Entrance.resx">
       <DependentUpon>Entrance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -111,5 +113,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

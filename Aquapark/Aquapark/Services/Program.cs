@@ -16,7 +16,7 @@ namespace Aquapark
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Tables1());
+            Application.Run(new Entrance());
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.OracleClient;
 using System.Windows.Forms;
+using Aquapark.Services;
 using Oracle.ManagedDataAccess.Client;
 
 namespace Aquapark
@@ -29,19 +30,7 @@ namespace Aquapark
         {
             try
             {
-                var connectionString = "Data Source=XE;User Id=Aquapark;Password=7zmty6q2e;";
-                using (var connection = new Oracle.ManagedDataAccess.Client.OracleConnection(connectionString))
-                {
-                    connection.Open();
-                    var command = new Oracle.ManagedDataAccess.Client.OracleCommand("SELECT * FROM Aquapark.Customers", connection);
-                    var oracleDataAdapter = new Oracle.ManagedDataAccess.Client.OracleDataAdapter(command);
-                    var dataSet = new DataSet();
-                    oracleDataAdapter.Fill(dataSet);
-                    if (dataSet.Tables.Count > 0)
-                    {
-                        customersGridView.DataSource = dataSet.Tables[0].DefaultView;
-                    }
-                }
+                customersGridView.DataSource = DbConnection.GetData(Query.GetGustomers).Tables[0].DefaultView;
             }
             catch (Exception ex)
             {

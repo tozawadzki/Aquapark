@@ -51,7 +51,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(47, 13);
             this.label5.TabIndex = 29;
-            this.label5.Text = "Strona 1";
+            this.label5.Text = "Strona 2";
             // 
             // button1
             // 
@@ -59,18 +59,18 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(98, 82);
             this.button1.TabIndex = 28;
-            this.button1.Text = "Strona 2";
+            this.button1.Text = "Strona 1";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(1034, 360);
+            this.label4.Location = new System.Drawing.Point(992, 359);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(130, 20);
+            this.label4.Size = new System.Drawing.Size(165, 20);
             this.label4.TabIndex = 27;
-            this.label4.Text = "Wyjścia z obiektu";
+            this.label4.Text = "Lista dostępnych stref";
             // 
             // label3
             // 
@@ -78,9 +78,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.Location = new System.Drawing.Point(569, 360);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 20);
+            this.label3.Size = new System.Drawing.Size(195, 20);
             this.label3.TabIndex = 26;
-            this.label3.Text = "Wejścia na obiekt";
+            this.label3.Text = "Sposoby wejścia na obiekt";
             // 
             // label2
             // 
@@ -88,9 +88,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.Location = new System.Drawing.Point(150, 359);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 20);
+            this.label2.Size = new System.Drawing.Size(122, 20);
             this.label2.TabIndex = 25;
-            this.label2.Text = "Transakcje";
+            this.label2.Text = "Dostępne zniżki";
             // 
             // dataGridView5
             // 
@@ -134,7 +134,7 @@
             this.customersGridView.Size = new System.Drawing.Size(1317, 291);
             this.customersGridView.TabIndex = 16;
             // 
-            // Form1
+            // Tables2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -149,8 +149,8 @@
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.watchId);
             this.Controls.Add(this.customersGridView);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Tables2";
+            this.Text = "Dane";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
