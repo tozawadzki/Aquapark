@@ -21,7 +21,7 @@ namespace Aquapark
 
         private void CreateCustomer()
         {
-            DbConnection.InsertData(Query.CreateCustomer(4, firstName.Text, lastName.Text, discount.SelectedIndex+1));
+            DbConnection.InsertData(Query.CreateCustomer(5, firstName.Text, lastName.Text, discount.SelectedIndex+1));
         }
         private void entryButton_Click(object sender, EventArgs e)
         {

@@ -62,7 +62,7 @@ namespace Aquapark.Services
         public static string CreateCustomer(int customerId, string firstName, string lastName, int discountId)
         {
             var query =
-                $"INSERT INTO Customers(Id, FirstName, LastName, DiscountId) VALUES ({customerId}, {firstName}, {lastName}, {discountId})";
+                $"INSERT INTO Customers(Id, FirstName, LastName, DiscountId) VALUES ({customerId}, '{firstName}', '{lastName}', {discountId})";
             return query;
         }
     }

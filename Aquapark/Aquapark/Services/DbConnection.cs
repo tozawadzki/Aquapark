@@ -38,7 +38,7 @@ namespace Aquapark.Services
                 {
                     connection.Open();
                     var command = new Oracle.ManagedDataAccess.Client.OracleCommand(query, connection);
-                    var oracleDataAdapter = new Oracle.ManagedDataAccess.Client.OracleDataAdapter(command);
+                    command.ExecuteNonQuery();
                 }
             }
             catch (Exception ex)
