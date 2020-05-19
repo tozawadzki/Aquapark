@@ -30,7 +30,7 @@ namespace Aquapark
         {
             try
             {
-                customersGridView.DataSource = DbConnection.GetData(Query.GetGustomers).Tables[0].DefaultView;
+                customersGridView.DataSource = DbService.GetData(Query.GetGustomers).Tables[0].DefaultView;
             }
             catch (Exception ex)
             {

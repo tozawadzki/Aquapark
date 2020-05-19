@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Aquapark.Services
 {
-    public class DbConnection
+    public class DbService
     {
         private const string connectionData = "Data Source=XE;User Id=Aquapark;Password=7zmty6q2e;";
         public static DataSet GetData(string query)
@@ -47,17 +47,17 @@ namespace Aquapark.Services
             }
         }
 
-        public static List<string> GetDiscountsForDropdown(string query)
+        public static List<string> GetValuesForDropdown(string query)
         {
-            var result = DbConnection.GetData(query);
-            var discounts = new List<string>();
+            var result = DbService.GetData(query);
+            var values = new List<string>();
             foreach (DataRow row in result.Tables[0].Rows)
             {
                 var discountName = string.Join(",", row.ItemArray);
-                discounts.Add(discountName);
+                values.Add(discountName);
             }
-
-            return discounts;
+            return values;
         }
+
     }
 }

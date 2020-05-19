@@ -15,6 +15,7 @@ namespace Aquapark
         public Aquapark()
         {
             InitializeComponent();
+            MessageBox.Show("Witamy w Aquaparku!");
         }
     }
 }

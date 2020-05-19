@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -44,25 +45,29 @@ namespace Aquapark.Services
             "SELECT * FROM Visits";
 
         public static string GetDiscountNames
-            = "SELECT Name from Discounts";
+            = "SELECT Name FROM Discounts";
 
-        public static string GetDiscountId(string discountName)
+        public static string GetServiceNames
+            = "SELECT Name FROM Services";
+
+        public static string GetEntranceMethodNames
+            = "SELECT Name FROM EntranceMethod";
+
+        public static string GetLastIdFromTable(string tableName)
         {
-            var query = $"SELECT Id FROM Discounts WHERE Name == {discountName}";
+            var query = $"SELECT MAX(Id) FROM {tableName}";
             return query;
         }
-        
-        public static string GetCustomerDiscount(int customerId)
-        {
-            var query = 
-                $"SELECT Amount FROM Aquapark.Discounts WHERE Discounts.Id == {customerId}";
-            return query;
-        }
-
         public static string CreateCustomer(int customerId, string firstName, string lastName, int discountId)
         {
             var query =
                 $"INSERT INTO Customers(Id, FirstName, LastName, DiscountId) VALUES ({customerId}, '{firstName}', '{lastName}', {discountId})";
+            return query;
+        }
+        public static string CreateEntrance(int entranceId, int watchId, int entranceMethodId, DateTime time, int customerId, int hours)
+        {
+            var query =
+                $"INSERT INTO Customers(Id, FirstName, LastName, DiscountId) VALUES ({entranceId}, {watchId}, {entranceMethodId}, {time}, {customerId}, {hours})";
             return query;
         }
     }

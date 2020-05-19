@@ -39,12 +39,18 @@
             this.entryButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.service = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.entranceMethod = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.hours = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // discount
             // 
             this.discount.FormattingEnabled = true;
-            this.discount.Location = new System.Drawing.Point(61, 99);
+            this.discount.Location = new System.Drawing.Point(61, 119);
             this.discount.Name = "discount";
             this.discount.Size = new System.Drawing.Size(121, 21);
             this.discount.TabIndex = 0;
@@ -52,7 +58,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(2, 66);
+            this.label1.Location = new System.Drawing.Point(2, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 1;
@@ -60,15 +66,15 @@
             // 
             // firstName
             // 
-            this.firstName.Location = new System.Drawing.Point(61, 33);
+            this.firstName.Location = new System.Drawing.Point(61, 40);
             this.firstName.Name = "firstName";
-            this.firstName.Size = new System.Drawing.Size(100, 20);
+            this.firstName.Size = new System.Drawing.Size(119, 20);
             this.firstName.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 33);
+            this.label2.Location = new System.Drawing.Point(2, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 13);
             this.label2.TabIndex = 3;
@@ -78,13 +84,13 @@
             // 
             this.lastName.Location = new System.Drawing.Point(61, 66);
             this.lastName.Name = "lastName";
-            this.lastName.Size = new System.Drawing.Size(100, 20);
+            this.lastName.Size = new System.Drawing.Size(119, 20);
             this.lastName.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(2, 99);
+            this.label3.Location = new System.Drawing.Point(2, 122);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 13);
             this.label3.TabIndex = 5;
@@ -92,7 +98,7 @@
             // 
             // entryButton
             // 
-            this.entryButton.Location = new System.Drawing.Point(75, 126);
+            this.entryButton.Location = new System.Drawing.Point(80, 197);
             this.entryButton.Name = "entryButton";
             this.entryButton.Size = new System.Drawing.Size(75, 23);
             this.entryButton.TabIndex = 6;
@@ -111,18 +117,75 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(107, 176);
+            this.button3.Location = new System.Drawing.Point(127, 226);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(107, 23);
             this.button3.TabIndex = 8;
             this.button3.Text = "Jestem adminem";
             this.button3.UseVisualStyleBackColor = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(2, 95);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Strefa";
+            // 
+            // service
+            // 
+            this.service.FormattingEnabled = true;
+            this.service.Location = new System.Drawing.Point(61, 92);
+            this.service.Name = "service";
+            this.service.Size = new System.Drawing.Size(121, 21);
+            this.service.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(2, 149);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(72, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Typ płatności";
+            // 
+            // entranceMethod
+            // 
+            this.entranceMethod.FormattingEnabled = true;
+            this.entranceMethod.Location = new System.Drawing.Point(80, 146);
+            this.entranceMethod.Name = "entranceMethod";
+            this.entranceMethod.Size = new System.Drawing.Size(100, 21);
+            this.entranceMethod.TabIndex = 13;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(2, 175);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(63, 13);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Ilość godzin";
+            // 
+            // hours
+            // 
+            this.hours.Location = new System.Drawing.Point(80, 171);
+            this.hours.Name = "hours";
+            this.hours.Size = new System.Drawing.Size(19, 20);
+            this.hours.TabIndex = 15;
+            this.hours.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // Entrance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(226, 211);
+            this.ClientSize = new System.Drawing.Size(246, 261);
+            this.Controls.Add(this.hours);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.entranceMethod);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.service);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.entryButton);
@@ -151,5 +214,11 @@
         private System.Windows.Forms.Button entryButton;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox service;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox entranceMethod;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox hours;
     }
 }
