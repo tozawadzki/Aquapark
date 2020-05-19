@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.OracleClient;
 using System.Windows.Forms;
 using Aquapark.Services;
-using Oracle.ManagedDataAccess.Client;
 
 namespace Aquapark
 {
