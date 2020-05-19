@@ -12,37 +12,37 @@ namespace Aquapark.Services
     public class Query
     {
         public static string GetGustomers =
-            "SELECT * FROM Customers";
+            "SELECT * FROM Customers ORDER BY Id";
 
         public static string GetTransactions =
-            "SELECT * FROM Transactions";
+            "SELECT * FROM Transactions ORDER BY Id";
 
         public static string GetTransactionTypes =
-            "SELECT * FROM TransactionTypes";
+            "SELECT * FROM TransactionTypes ORDER BY Id";
 
         public static string GetEntrances =
-            "SELECT * FROM Entrances";
+            "SELECT * FROM Entrances ORDER BY Id";
 
         public static string GetEntranceMethods =
-            "SELECT * FROM EntranceMethods";
+            "SELECT * FROM EntranceMethods ORDER BY Id";
 
         public static string GetExits =
-            "SELECT * FROM Exits";
+            "SELECT * FROM Exits ORDER BY Id";
 
         public static string GetServices =
-            "SELECT * FROM Services";
+            "SELECT * FROM Services ORDER BY Id";
 
         public static string GetWatches =
-            "SELECT * FROM Watches";
+            "SELECT * FROM Watches ORDER BY Id";
 
         public static string GetDiscounts =
-            "SELECT * FROM Discounts";
+            "SELECT * FROM Discounts ORDER BY Id";
 
         public static string GetCharges =
-            "SELECT * FROM Charges";
+            "SELECT * FROM Charges ORDER BY Id";
 
         public static string GetVisits =
-            "SELECT * FROM Visits";
+            "SELECT * FROM Visits ORDER BY Id";
 
         public static string GetDiscountNames
             = "SELECT Name FROM Discounts";

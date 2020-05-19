@@ -16,5 +16,12 @@ namespace Aquapark
         {
             InitializeComponent();
         }
+
+        private void page1Button_Click(object sender, EventArgs e)
+        {
+            Tables1 tables1Form = new Tables1();
+            tables1Form.Show();
+            this.Hide();
+        }
     }
 }

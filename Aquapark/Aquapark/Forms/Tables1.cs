@@ -38,14 +38,18 @@ namespace Aquapark
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void page2Button_Click(object sender, EventArgs e)
         {
-
+            Tables2 tables2Form = new Tables2();
+            tables2Form.Show();
+            this.Hide();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void backToMainButton_Click(object sender, EventArgs e)
         {
-
+            Aquapark aquaparkForm = new Aquapark();
+            aquaparkForm.Show();
+            this.Hide();
         }
     }
 }

@@ -16,8 +16,8 @@ namespace Aquapark
         public Entrance()
         {
             InitializeComponent();
-            discount.DataSource = DbService.GetValuesForDropdown(Query.GetDiscountNames);
             service.DataSource = DbService.GetValuesForDropdown(Query.GetServiceNames);
+            discount.DataSource = DbService.GetValuesForDropdown(Query.GetDiscountNames);
             entranceMethod.DataSource = DbService.GetValuesForDropdown(Query.GetEntranceMethodNames);
         }
 
@@ -29,14 +29,16 @@ namespace Aquapark
         }
         private void CreateEntrance()
         {
-            DbService.InsertData(Query.CreateEntrance(1, 1, entranceMethod.SelectedIndex+1, DateTime.Now, CreateCustomer(), Convert.ToInt32(hours.Text)));
+            var newEntranceId = Convert.ToInt32(DbService.GetValuesForDropdown(Query.GetLastIdFromTable("Entrances")).ToList().FirstOrDefault()) + 1;
+            var watchId = Convert.ToInt32(DbService.GetValuesForDropdown(Query.GetLastIdFromTable("Watches")).ToList().FirstOrDefault());
+            DbService.InsertData(Query.CreateEntrance(newEntranceId, watchId, entranceMethod.SelectedIndex+1, DateTime.Now, CreateCustomer(), Convert.ToInt32(hours.Text)));
         }
         private void entryButton_Click(object sender, EventArgs e)
         {
             try
             {
                 CreateCustomer();
-                //CreateEntrance();
+                CreateEntrance();
                 Aquapark aquaparkForm = new Aquapark();
                 aquaparkForm.Show();
                 this.Hide();
@@ -47,9 +49,11 @@ namespace Aquapark
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void adminButton_Click(object sender, EventArgs e)
         {
-
+            Tables1 tables1Form = new Tables1();
+            tables1Form.Show();
+            this.Hide();
         }
     }
 }

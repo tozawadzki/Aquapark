@@ -40,9 +40,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.page2Button = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.backToMainButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.customersGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -104,7 +104,6 @@
             this.label1.Size = new System.Drawing.Size(88, 20);
             this.label1.TabIndex = 7;
             this.label1.Text = "Obciążenia";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dataGridView3
             // 
@@ -139,7 +138,6 @@
             this.label2.Size = new System.Drawing.Size(86, 20);
             this.label2.TabIndex = 11;
             this.label2.Text = "Transakcje";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -161,14 +159,15 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "Wyjścia z obiektu";
             // 
-            // button1
+            // page2Button
             // 
-            this.button1.Location = new System.Drawing.Point(1335, 299);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 82);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Strona 2";
-            this.button1.UseVisualStyleBackColor = true;
+            this.page2Button.Location = new System.Drawing.Point(1335, 299);
+            this.page2Button.Name = "page2Button";
+            this.page2Button.Size = new System.Drawing.Size(98, 82);
+            this.page2Button.TabIndex = 14;
+            this.page2Button.Text = "Strona 2";
+            this.page2Button.UseVisualStyleBackColor = true;
+            this.page2Button.Click += new System.EventHandler(this.page2Button_Click);
             // 
             // label5
             // 
@@ -179,23 +178,24 @@
             this.label5.TabIndex = 15;
             this.label5.Text = "Strona 1";
             // 
-            // button2
+            // backToMainButton
             // 
-            this.button2.Location = new System.Drawing.Point(1335, 604);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 39);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Powrót na obiekt";
-            this.button2.UseVisualStyleBackColor = true;
+            this.backToMainButton.Location = new System.Drawing.Point(1335, 604);
+            this.backToMainButton.Name = "backToMainButton";
+            this.backToMainButton.Size = new System.Drawing.Size(98, 39);
+            this.backToMainButton.TabIndex = 16;
+            this.backToMainButton.Text = "Powrót na obiekt";
+            this.backToMainButton.UseVisualStyleBackColor = true;
+            this.backToMainButton.Click += new System.EventHandler(this.backToMainButton_Click);
             // 
             // Tables1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1445, 653);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.backToMainButton);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.page2Button);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -236,9 +236,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button page2Button;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button backToMainButton;
     }
 }
 

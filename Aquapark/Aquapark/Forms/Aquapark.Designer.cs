@@ -51,10 +51,10 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button11 = new System.Windows.Forms.Button();
+            this.leaveButton = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.button12 = new System.Windows.Forms.Button();
+            this.adminButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -258,14 +258,15 @@
             this.textBox3.Size = new System.Drawing.Size(45, 20);
             this.textBox3.TabIndex = 22;
             // 
-            // button11
+            // leaveButton
             // 
-            this.button11.Location = new System.Drawing.Point(713, 230);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 23);
-            this.button11.TabIndex = 23;
-            this.button11.Text = "Opuść";
-            this.button11.UseVisualStyleBackColor = true;
+            this.leaveButton.Location = new System.Drawing.Point(713, 230);
+            this.leaveButton.Name = "leaveButton";
+            this.leaveButton.Size = new System.Drawing.Size(75, 23);
+            this.leaveButton.TabIndex = 23;
+            this.leaveButton.Text = "Opuść";
+            this.leaveButton.UseVisualStyleBackColor = true;
+            this.leaveButton.Click += new System.EventHandler(this.leaveButton_Click);
             // 
             // label11
             // 
@@ -285,24 +286,25 @@
             this.label12.TabIndex = 25;
             this.label12.Text = "Obsługa obiektu";
             // 
-            // button12
+            // adminButton
             // 
-            this.button12.Location = new System.Drawing.Point(23, 139);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 23);
-            this.button12.TabIndex = 26;
-            this.button12.Text = "Zaloguj";
-            this.button12.UseVisualStyleBackColor = true;
+            this.adminButton.Location = new System.Drawing.Point(23, 139);
+            this.adminButton.Name = "adminButton";
+            this.adminButton.Size = new System.Drawing.Size(75, 23);
+            this.adminButton.TabIndex = 26;
+            this.adminButton.Text = "Zaloguj";
+            this.adminButton.UseVisualStyleBackColor = true;
+            this.adminButton.Click += new System.EventHandler(this.adminButton_Click);
             // 
             // Aquapark
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 265);
-            this.Controls.Add(this.button12);
+            this.Controls.Add(this.adminButton);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.button11);
+            this.Controls.Add(this.leaveButton);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textBox2);
@@ -358,9 +360,9 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button leaveButton;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button adminButton;
     }
 }
