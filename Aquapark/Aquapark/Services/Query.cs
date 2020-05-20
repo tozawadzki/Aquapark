@@ -63,5 +63,131 @@ namespace Aquapark.Services
                 $"INSERT INTO Customers(Id, FirstName, LastName, DiscountId) VALUES ({entranceId}, {watchId}, {entranceMethodId}, {time}, {customerId}, {hours})";
             return query;
         }
+
+        public static string GetCustomerDiscount(int customerId)
+        {
+            var query =
+            $"SELECT Discounts.amount FROM Discounts WHERE discounts.id = ({customerId})";
+            return query;
+        }
+
+        public static string GetTransactionType(int TransactionTypeId)
+        {
+            var query =
+            $"SELECT TransactionType.name FROM transactiontype WHERE transactiontype.id = {TransactionTypeId};";
+            return query;
+        }
+
+        public static string CreateTransaction(int Id, int ServiceId, int WatchId, int TransactionTypeId, DateTime time)
+        {
+            var query =
+            $"INSERT INTO TRANSACTION (Id, Serviceid, TransactionTypeId, time) VALUES({Id}, {ServiceId}, {WatchId}, {TransactionTypeId}, {time};"; //
+            return query;
+        }
+
+        public static string GetListOfTransactions(int WatchId)
+        {
+            var query =
+            $"SELECT * FROM transaction WHERE watchid = {WatchId};";
+            return query;
+        }
+
+        public static string DeleteTransactions(int WatchId)
+        {
+            var query =
+            $"DELETE * FROM transaction WHERE watchid = {WatchId};";
+            return query;
+        }
+
+        public static string GetPricePerHour(int ServiceId)
+        {
+            var query =
+            $"SELECT Services.priceperhour FROM services WHERE services.serviceid = {ServiceId};";
+            return query;
+        }
+
+        public static string GetPricePerMinute(int ServiceId)
+        {
+            var query =
+            $"SELECT Services.priceperminute FROM services WHERE services.serviceid = {ServiceId};";
+            return query;
+        }
+
+        public static string GetServiceName(int ServiceId)
+        {
+            var query =
+            $"SELECT Services.name FROM services WHERE services.serviceid = {ServiceId};";
+            return query;
+        }
+
+        // public static string GetFreeServicesId(int EntranceMethodId)
+        // {
+        //      Nie wiem jak zrobić
+        //}
+
+        public static string GetCustomerId(int WatchId)
+        {
+            var query =
+            $"SELECT Watches.Customerid FROM watches WHERE watches.watchid = {WatchId};";
+            return query;
+        }
+
+        public static string GetServiceId(int WatchId)
+        {
+            var query =
+            $"SELECT Watches.Serviceid FROM watches WHERE watches.watchid = {WatchId};";
+            return query;
+        }
+
+        public static string GetDiscountAmount(int DiscountId)
+        {
+            var query =
+            $"SELECT Discounts.amount FROM discounts WHERE discounts.discountid = {DiscountId};";
+            return query;
+        }
+
+        public static string CreateCharge(int Amount, int WatchId)
+        {
+            var query =
+            $"INSERT INTO CHARGES (Amount, WatchId) VALUES({Amount}, {WatchId});";
+            return query;
+        }
+
+        public static string GetSumOfWatchCharges(int WatchId)
+        {
+            var query =
+            $"SELECT SUM(Charge.amount) FROM charge Where charge.WatchId = {WatchId};";
+            return query;
+        }
+
+        public static string GetEntranceTime(int WatchId)
+        {
+            var query =
+            $"SELECT Entrances.TIME FROM Entrances WHERE entrances.Watchid = {WatchId};";
+            return query;
+        }
+
+        public static string CreateExit(int WatchId, DateTime time)
+        {
+            var query =
+            $"INSERT INTO EXITS (WatchId, Time) VALUES({WatchId}, {time});"; //
+            return query;
+        }
+
+        public static string GetExitTime(int WatchId)
+        {
+            var query =
+            $"SELECT Exits.TIME FROM Exits WHERE Exits.Watchid = {WatchId};"; 
+            return query;
+        }
+
+        public static string CreateVisit(int WatchId, int ServiceId, int CustomerId, decimal Amount)
+        {
+            var query =
+            $"INSERT INTO Visits (WatchId, ServiceId, CustomerId, Amount) VALUES({WatchId}, {ServiceId}, {CustomerId}, {Amount});"; 
+            return query;
+        }
+
+
     }
 }

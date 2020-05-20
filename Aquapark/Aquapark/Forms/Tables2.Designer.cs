@@ -33,15 +33,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.servicesGridView = new System.Windows.Forms.DataGridView();
+            this.entranceMethodsGridView = new System.Windows.Forms.DataGridView();
+            this.discountsGridView = new System.Windows.Forms.DataGridView();
             this.watchId = new System.Windows.Forms.Label();
-            this.customersGridView = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customersGridView)).BeginInit();
+            this.visitsGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.servicesGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.entranceMethodsGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.discountsGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.visitsGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
@@ -93,29 +93,29 @@
             this.label2.TabIndex = 25;
             this.label2.Text = "Dostępne zniżki";
             // 
-            // dataGridView5
+            // servicesGridView
             // 
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Location = new System.Drawing.Point(871, 382);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.Size = new System.Drawing.Size(435, 291);
-            this.dataGridView5.TabIndex = 24;
+            this.servicesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.servicesGridView.Location = new System.Drawing.Point(871, 382);
+            this.servicesGridView.Name = "servicesGridView";
+            this.servicesGridView.Size = new System.Drawing.Size(435, 291);
+            this.servicesGridView.TabIndex = 24;
             // 
-            // dataGridView4
+            // entranceMethodsGridView
             // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(430, 382);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(435, 291);
-            this.dataGridView4.TabIndex = 23;
+            this.entranceMethodsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.entranceMethodsGridView.Location = new System.Drawing.Point(430, 382);
+            this.entranceMethodsGridView.Name = "entranceMethodsGridView";
+            this.entranceMethodsGridView.Size = new System.Drawing.Size(435, 291);
+            this.entranceMethodsGridView.TabIndex = 23;
             // 
-            // dataGridView3
+            // discountsGridView
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(-11, 382);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(435, 291);
-            this.dataGridView3.TabIndex = 22;
+            this.discountsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.discountsGridView.Location = new System.Drawing.Point(-11, 382);
+            this.discountsGridView.Name = "discountsGridView";
+            this.discountsGridView.Size = new System.Drawing.Size(435, 291);
+            this.discountsGridView.TabIndex = 22;
             // 
             // watchId
             // 
@@ -127,13 +127,13 @@
             this.watchId.TabIndex = 18;
             this.watchId.Text = "Historia wizyt";
             // 
-            // customersGridView
+            // visitsGridView
             // 
-            this.customersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customersGridView.Location = new System.Drawing.Point(-11, 66);
-            this.customersGridView.Name = "customersGridView";
-            this.customersGridView.Size = new System.Drawing.Size(1317, 291);
-            this.customersGridView.TabIndex = 16;
+            this.visitsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.visitsGridView.Location = new System.Drawing.Point(-11, 66);
+            this.visitsGridView.Name = "visitsGridView";
+            this.visitsGridView.Size = new System.Drawing.Size(1317, 291);
+            this.visitsGridView.TabIndex = 16;
             // 
             // Tables2
             // 
@@ -145,17 +145,17 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView5);
-            this.Controls.Add(this.dataGridView4);
-            this.Controls.Add(this.dataGridView3);
+            this.Controls.Add(this.servicesGridView);
+            this.Controls.Add(this.entranceMethodsGridView);
+            this.Controls.Add(this.discountsGridView);
             this.Controls.Add(this.watchId);
-            this.Controls.Add(this.customersGridView);
+            this.Controls.Add(this.visitsGridView);
             this.Name = "Tables2";
             this.Text = "Dane";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customersGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicesGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.entranceMethodsGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.discountsGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.visitsGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,10 +168,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView5;
-        private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView servicesGridView;
+        private System.Windows.Forms.DataGridView entranceMethodsGridView;
+        private System.Windows.Forms.DataGridView discountsGridView;
         private System.Windows.Forms.Label watchId;
-        private System.Windows.Forms.DataGridView customersGridView;
+        private System.Windows.Forms.DataGridView visitsGridView;
     }
 }

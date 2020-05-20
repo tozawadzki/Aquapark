@@ -31,12 +31,12 @@
             this.customersGridView = new System.Windows.Forms.DataGridView();
             this.customersLabel = new System.Windows.Forms.Label();
             this.watchId = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.watchesGridView = new System.Windows.Forms.DataGridView();
+            this.chargesGridView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.transactionsGridView = new System.Windows.Forms.DataGridView();
+            this.entrancesGridView = new System.Windows.Forms.DataGridView();
+            this.exitsGridView = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -44,11 +44,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.backToMainButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.customersGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.watchesGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chargesGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transactionsGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.entrancesGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exitsGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // customersGridView
@@ -79,21 +79,21 @@
             this.watchId.TabIndex = 4;
             this.watchId.Text = "Używane zegarki";
             // 
-            // dataGridView2
+            // watchesGridView
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(453, 36);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(435, 291);
-            this.dataGridView2.TabIndex = 5;
+            this.watchesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.watchesGridView.Location = new System.Drawing.Point(453, 36);
+            this.watchesGridView.Name = "watchesGridView";
+            this.watchesGridView.Size = new System.Drawing.Size(435, 291);
+            this.watchesGridView.TabIndex = 5;
             // 
-            // dataGridView1
+            // chargesGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(894, 36);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(435, 291);
-            this.dataGridView1.TabIndex = 6;
+            this.chargesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.chargesGridView.Location = new System.Drawing.Point(894, 36);
+            this.chargesGridView.Name = "chargesGridView";
+            this.chargesGridView.Size = new System.Drawing.Size(435, 291);
+            this.chargesGridView.TabIndex = 6;
             // 
             // label1
             // 
@@ -105,29 +105,29 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Obciążenia";
             // 
-            // dataGridView3
+            // transactionsGridView
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(12, 352);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(435, 291);
-            this.dataGridView3.TabIndex = 8;
+            this.transactionsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.transactionsGridView.Location = new System.Drawing.Point(12, 352);
+            this.transactionsGridView.Name = "transactionsGridView";
+            this.transactionsGridView.Size = new System.Drawing.Size(435, 291);
+            this.transactionsGridView.TabIndex = 8;
             // 
-            // dataGridView4
+            // entrancesGridView
             // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(453, 352);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(435, 291);
-            this.dataGridView4.TabIndex = 9;
+            this.entrancesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.entrancesGridView.Location = new System.Drawing.Point(453, 352);
+            this.entrancesGridView.Name = "entrancesGridView";
+            this.entrancesGridView.Size = new System.Drawing.Size(435, 291);
+            this.entrancesGridView.TabIndex = 9;
             // 
-            // dataGridView5
+            // exitsGridView
             // 
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Location = new System.Drawing.Point(894, 352);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.Size = new System.Drawing.Size(435, 291);
-            this.dataGridView5.TabIndex = 10;
+            this.exitsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.exitsGridView.Location = new System.Drawing.Point(894, 352);
+            this.exitsGridView.Name = "exitsGridView";
+            this.exitsGridView.Size = new System.Drawing.Size(435, 291);
+            this.exitsGridView.TabIndex = 10;
             // 
             // label2
             // 
@@ -199,12 +199,12 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView5);
-            this.Controls.Add(this.dataGridView4);
-            this.Controls.Add(this.dataGridView3);
+            this.Controls.Add(this.exitsGridView);
+            this.Controls.Add(this.entrancesGridView);
+            this.Controls.Add(this.transactionsGridView);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.chargesGridView);
+            this.Controls.Add(this.watchesGridView);
             this.Controls.Add(this.watchId);
             this.Controls.Add(this.customersLabel);
             this.Controls.Add(this.customersGridView);
@@ -212,11 +212,11 @@
             this.Text = "Dane";
             this.Load += new System.EventHandler(this.Aquapark_Load);
             ((System.ComponentModel.ISupportInitialize)(this.customersGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.watchesGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chargesGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transactionsGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.entrancesGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exitsGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,12 +227,12 @@
         private System.Windows.Forms.DataGridView customersGridView;
         private System.Windows.Forms.Label customersLabel;
         private System.Windows.Forms.Label watchId;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView watchesGridView;
+        private System.Windows.Forms.DataGridView chargesGridView;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.DataGridView transactionsGridView;
+        private System.Windows.Forms.DataGridView entrancesGridView;
+        private System.Windows.Forms.DataGridView exitsGridView;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
