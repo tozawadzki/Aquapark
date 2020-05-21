@@ -2,23 +2,22 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Oracle.ManagedDataAccess.Client;
 
 namespace Aquapark.Services
 {
     public class DbService
     {
-        private const string connectionData = "Data Source=XE;User Id=aquapark;Password=123;";
+        private const string connectionData = "Data Source=XE;User Id=Aquapark;Password=7zmty6q2e;";
         public static DataSet GetData(string query)
         {
             var connectionString = connectionData;
-            using (var connection = new Oracle.ManagedDataAccess.Client.OracleConnection(connectionString))
+            using (var connection = new OracleConnection(connectionString))
             {
                 connection.Open();
-                var command = new Oracle.ManagedDataAccess.Client.OracleCommand(query, connection);
-                var oracleDataAdapter = new Oracle.ManagedDataAccess.Client.OracleDataAdapter(command);
+                var command = new OracleCommand(query, connection);
+                var oracleDataAdapter = new OracleDataAdapter(command);
                 var dataSet = new DataSet();
                 oracleDataAdapter.Fill(dataSet);
                 if (dataSet.Tables.Count > 0)
@@ -29,21 +28,24 @@ namespace Aquapark.Services
             return null;
         }
 
-        public static void InsertData(string query)
+        public static int InsertData(string query)
         {
             try
             {
                 var connectionString = connectionData;
-                using (var connection = new Oracle.ManagedDataAccess.Client.OracleConnection(connectionString))
+                using (var connection = new OracleConnection(connectionString))
                 {
                     connection.Open();
-                    var command = new Oracle.ManagedDataAccess.Client.OracleCommand(query, connection);
-                    command.ExecuteNonQuery();
+                    var command = new OracleCommand(query, connection);
+                    return command.ExecuteNonQuery();
                 }
             }
-            catch (Exception ex)
+            catch (OracleException ex)
             {
-                MessageBox.Show(ex.ToString());
+                string errorMessage = "Kod błędu: " + ex.ErrorCode + "\n" +
+                                      "Komunikat: " + ex.Message;
+                MessageBox.Show(errorMessage);
+                return 0;
             }
         }
 
@@ -59,5 +61,16 @@ namespace Aquapark.Services
             return values;
         }
 
+        public static int GetNewId(string table)
+        {
+            return Convert.ToInt32(GetValuesForDropdown(Query.GetLastIdFromTable(table)).ToList().FirstOrDefault()) + 1;
+        }
+
+        public static int IsSuccess(int isSuccess, int Id)
+        {
+            if (isSuccess == 1)
+                return Id;
+            return 0;
+        }
     }
 }

@@ -8,7 +8,13 @@ namespace Aquapark
         public Aquapark()
         {
             InitializeComponent();
+            InitializeFields();
             MessageBox.Show("Witamy w Aquaparku!");
+        }
+
+        private void InitializeFields()
+        {
+
         }
 
         private void adminButton_Click(object sender, EventArgs e)

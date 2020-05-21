@@ -14,7 +14,6 @@ namespace Aquapark
         private void Aquapark_Load(object sender, EventArgs e)
         {
             LoadData();
-
         }
 
         private void LoadData()
@@ -25,9 +24,7 @@ namespace Aquapark
             LoadTransactions();
             LoadEntrances();
             LoadExits();
-
-
-            }
+        }
 
         private void LoadCustomers()
         {

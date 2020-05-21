@@ -14,17 +14,14 @@ namespace Aquapark
         private void Aquapark_Load(object sender, EventArgs e)
         {
             LoadData();
-
         }
 
         private void LoadData()
         {
-
             LoadVisits();
             LoadDiscounts();
-            LoadEntrancemethods();
+            LoadEntranceMethods();
             LoadServices();
-
         }
 
         private void LoadVisits()
@@ -53,7 +50,7 @@ namespace Aquapark
         }
 
 
-        private void LoadEntrancemethods()
+        private void LoadEntranceMethods()
         {
             try
             {

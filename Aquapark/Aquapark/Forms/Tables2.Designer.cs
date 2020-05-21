@@ -152,6 +152,7 @@
             this.Controls.Add(this.visitsGridView);
             this.Name = "Tables2";
             this.Text = "Dane";
+            this.Load += new System.EventHandler(this.Aquapark_Load);
             ((System.ComponentModel.ISupportInitialize)(this.servicesGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.entranceMethodsGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.discountsGridView)).EndInit();

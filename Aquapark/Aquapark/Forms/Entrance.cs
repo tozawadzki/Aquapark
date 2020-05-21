@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Windows.Forms;
 using Aquapark.Services;
 
@@ -10,6 +9,11 @@ namespace Aquapark
         public Entrance()
         {
             InitializeComponent();
+            InitializeTables();
+        }
+
+        private void InitializeTables()
+        {
             service.DataSource = DbService.GetValuesForDropdown(Query.GetServiceNames);
             discount.DataSource = DbService.GetValuesForDropdown(Query.GetDiscountNames);
             entranceMethod.DataSource = DbService.GetValuesForDropdown(Query.GetEntranceMethodNames);
@@ -17,29 +21,37 @@ namespace Aquapark
 
         private int CreateCustomer()
         {
-            var newCustomerId = Convert.ToInt32(DbService.GetValuesForDropdown(Query.GetLastIdFromTable("Customers")).ToList().FirstOrDefault()) + 1;
-            DbService.InsertData(Query.CreateCustomer(newCustomerId, firstName.Text, lastName.Text, discount.SelectedIndex+1));
-            return newCustomerId;
+            var newId = DbService.GetNewId("Customers");
+            var isSuccess = DbService.InsertData(Query.CreateCustomer(newId, firstName.Text, lastName.Text, discount.SelectedIndex + 1));
+            return DbService.IsSuccess(isSuccess, newId);
         }
-        private void CreateEntrance()
+
+        private int CreateEntrance()
         {
-            var newEntranceId = Convert.ToInt32(DbService.GetValuesForDropdown(Query.GetLastIdFromTable("Entrances")).ToList().FirstOrDefault()) + 1;
-            var watchId = Convert.ToInt32(DbService.GetValuesForDropdown(Query.GetLastIdFromTable("Watches")).ToList().FirstOrDefault());
-            DbService.InsertData(Query.CreateEntrance(newEntranceId, watchId, entranceMethod.SelectedIndex+1, DateTime.Now, CreateCustomer(), Convert.ToInt32(hours.Text)));
+            var customerId = CreateCustomer();
+            var watchId = GetWatchId();
+            if (CreateCustomer() != 0)
+            {
+                var entranceId = DbService.GetNewId("Entrances");
+                var isSuccess = DbService.InsertData(Query.CreateEntrance(entranceId, watchId, entranceMethod.SelectedIndex + 1, DateTime.Now, customerId, Convert.ToInt32(hours.Text)));
+                return DbService.IsSuccess(isSuccess, entranceId);
+            }
+
+            return 0;
         }
+
+        private int GetWatchId()
+        {
+            return 0;
+        }
+
         private void entryButton_Click(object sender, EventArgs e)
         {
-            try
+            if (CreateEntrance() != 0)
             {
-                CreateCustomer();
-                //CreateEntrance();
                 Aquapark aquaparkForm = new Aquapark();
                 aquaparkForm.Show();
                 this.Hide();
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
             }
         }
 

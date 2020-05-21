@@ -188,6 +188,5 @@ namespace Aquapark.Services
             return query;
         }
 
-
     }
 }
