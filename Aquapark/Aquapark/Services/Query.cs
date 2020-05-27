@@ -10,9 +10,6 @@ namespace Aquapark.Services
         public static string GetTransactions =
             "SELECT * FROM Transactions ORDER BY Id";
 
-        public static string GetTransactionTypes =
-            "SELECT * FROM TransactionTypes ORDER BY Id";
-
         public static string GetEntrances =
             "SELECT * FROM Entrances ORDER BY Id";
 
@@ -92,38 +89,38 @@ namespace Aquapark.Services
             return query;
         }
 
-        public static string GetListOfTransactions(int WatchId)
+        public static string GetListOfTransactions(int watchId)
         {
             var query =
-            $"SELECT * FROM transaction WHERE watchid = {WatchId};";
+            $"SELECT * FROM transaction WHERE watchid = {watchId};";
             return query;
         }
 
-        public static string DeleteTransactions(int WatchId)
+        public static string DeleteTransactions(int watchId)
         {
             var query =
-            $"DELETE * FROM transaction WHERE watchid = {WatchId};";
+            $"DELETE * FROM transaction WHERE watchid = {watchId};";
             return query;
         }
 
-        public static string GetPricePerHour(int ServiceId)
+        public static string GetPricePerHour(int serviceId)
         {
             var query =
-            $"SELECT Services.priceperhour FROM services WHERE services.id = {ServiceId};";
+            $"SELECT Services.priceperhour FROM services WHERE services.id = {serviceId};";
             return query;
         }
 
-        public static string GetPricePerMinute(int ServiceId)
+        public static string GetPricePerMinute(int serviceId)
         {
             var query =
-            $"SELECT Services.priceperminute FROM services WHERE services.id = {ServiceId};";
+            $"SELECT Services.priceperminute FROM services WHERE services.id = {serviceId};";
             return query;
         }
 
-        public static string GetServiceName(int ServiceId)
+        public static string GetServiceName(int serviceId)
         {
             var query =
-            $"SELECT Services.name FROM services WHERE services.id = {ServiceId};";
+            $"SELECT Services.name FROM services WHERE services.id = {serviceId};";
             return query;
         }
 
@@ -132,66 +129,72 @@ namespace Aquapark.Services
         //      Nie wiem jak zrobić
         //}
 
-        public static string GetCustomerId(int WatchId)
+        public static string GetCustomerId(int watchId)
         {
             var query =
-            $"SELECT Watches.Customerid FROM watches WHERE watches.id = {WatchId};";
+            $"SELECT Watches.Customerid FROM watches WHERE watches.id = {watchId};";
             return query;
         }
 
-        public static string GetServiceId(int WatchId)
+        public static string GetServiceId(int watchId)
         {
             var query =
-            $"SELECT Watches.Serviceid FROM watches WHERE watches.id = {WatchId};";
+            $"SELECT Watches.Serviceid FROM watches WHERE watches.id = {watchId};";
             return query;
         }
 
-        public static string GetDiscountAmount(int DiscountId)
+        public static string GetDiscountAmount(int discountId)
         {
             var query =
-            $"SELECT Discounts.amount FROM discounts WHERE discounts.id = {DiscountId};";
+            $"SELECT Discounts.amount FROM discounts WHERE discounts.id = {discountId};";
             return query;
         }
 
-        public static string CreateCharge(int Amount, int WatchId)
+        public static string CreateCharge(int chargeId, int amount, int watchId)
         {
             var query =
-            $"INSERT INTO CHARGES (Amount, WatchId) VALUES({Amount}, {WatchId});";
+            $"INSERT INTO CHARGES (Id, Amount, WatchId) VALUES({chargeId}, {amount}, {watchId});";
             return query;
         }
 
-        public static string GetSumOfWatchCharges(int WatchId)
+        public static string GetSumOfWatchCharges(int watchId)
         {
             var query =
-            $"SELECT SUM(Charge.amount) FROM charge Where charge.WatchId = {WatchId};";
+            $"SELECT SUM(Charge.amount) FROM charge Where charge.WatchId = {watchId};";
             return query;
         }
 
-        public static string GetEntranceTime(int WatchId)
+        public static string GetEntranceTime(int watchId)
         {
             var query =
-            $"SELECT Entrances.TIME FROM Entrances WHERE entrances.Watchid = {WatchId};";
+            $"SELECT Entrances.TIME FROM Entrances WHERE entrances.Watchid = {watchId};";
             return query;
         }
 
-        public static string CreateExit(int WatchId, DateTime time)
+        public static string CreateExit(int watchId, DateTime time)
         {
             var query =
-            $"INSERT INTO EXITS (WatchId, Time) VALUES({WatchId}, {time});"; //
+            $"INSERT INTO EXITS (WatchId, Time) VALUES({watchId}, {time});"; //
             return query;
         }
 
-        public static string GetExitTime(int WatchId)
+        public static string GetExitTime(int watchId)
         {
             var query =
-            $"SELECT Exits.TIME FROM Exits WHERE Exits.Watchid = {WatchId};"; 
+            $"SELECT Exits.TIME FROM Exits WHERE Exits.Watchid = {watchId};";
             return query;
         }
 
-        public static string CreateVisit(int WatchId, int ServiceId, int CustomerId, decimal Amount)
+        public static string CreateVisit(int watchId, int serviceId, int customerId, decimal amount)
         {
             var query =
-            $"INSERT INTO Visits (WatchId, ServiceId, CustomerId, Amount) VALUES({WatchId}, {ServiceId}, {CustomerId}, {Amount});"; 
+            $"INSERT INTO Visits (WatchId, ServiceId, CustomerId, Amount) VALUES({watchId}, {serviceId}, {customerId}, {amount});";
+            return query;
+        }
+
+        public static string GetAllCharges(int watchId)
+        {
+            var query = $"SELECT SUM(Amount) FROM Charges WHERE Charges.WatchId = {watchId}";
             return query;
         }
 

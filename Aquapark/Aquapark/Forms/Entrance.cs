@@ -34,17 +34,36 @@ namespace Aquapark
         private int CreateEntrance()
         {
             var customerId = CreateCustomer();
-            var watchId = CreateWatch(customerId);
+            var tmp = CreateWatch(customerId);
+            var watchId = NewWatch.Id;
             if (customerId != 0)
             {
                 var entranceId = DbService.GetNewId("Entrances");
                 var isSuccess = DbService.InsertData(Query.CreateEntrance(entranceId, watchId, entranceMethod.SelectedIndex + 1, DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"), customerId, Convert.ToInt32(hours.Text)));
                 NewEntrance = new Entrances(entranceId, watchId, entranceMethod.SelectedIndex + 1, DateTime.Now,
                     customerId, Convert.ToInt32(hours.Text));
-                return DbService.IsSuccess(isSuccess, entranceId);
+                if (isSuccess == 1)
+                {
+                    CreateCharge();
+                    return isSuccess;
+                }
+                else
+                {
+                    return 0;
+                }
             }
 
             return 0;
+        }
+
+        private int CreateCharge()
+        {
+            //var newId = DbService.GetNewId("Charges"); -> nie działa nie wiadomo czemu
+            Random rnd = new Random();
+            var newId = rnd.Next(0, 50000);
+            var hours = NewEntrance.Hours;
+            var pricePerHour = hours*12; // docelowo wartość z bazy
+            return 1; // też nie wiem o co chodzi, na bazie insert działa a tutaj nie przechodzi -> DbService.InsertData(Query.CreateCharge(newId, pricePerHour, NewWatch.Id ));
         }
 
         private int CreateWatch(int customerId)

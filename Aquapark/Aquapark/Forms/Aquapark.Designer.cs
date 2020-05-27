@@ -50,7 +50,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.chargeTextBox = new System.Windows.Forms.TextBox();
             this.leaveButton = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -253,12 +253,12 @@
             this.label10.TabIndex = 21;
             this.label10.Text = "Obciążenie:";
             // 
-            // textBox3
+            // chargeTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(80, 237);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(45, 20);
-            this.textBox3.TabIndex = 22;
+            this.chargeTextBox.Location = new System.Drawing.Point(80, 237);
+            this.chargeTextBox.Name = "chargeTextBox";
+            this.chargeTextBox.Size = new System.Drawing.Size(45, 20);
+            this.chargeTextBox.TabIndex = 22;
             // 
             // leaveButton
             // 
@@ -327,7 +327,7 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.leaveButton);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.chargeTextBox);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label9);
@@ -381,7 +381,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox chargeTextBox;
         private System.Windows.Forms.Button leaveButton;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;

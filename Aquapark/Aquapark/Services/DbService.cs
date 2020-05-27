@@ -55,15 +55,15 @@ namespace Aquapark.Services
             var values = new List<string>();
             foreach (DataRow row in result.Tables[0].Rows)
             {
-                var discountName = string.Join(",", row.ItemArray);
-                values.Add(discountName);
+                var item = string.Join(",", row.ItemArray);
+                values.Add(item);
             }
             return values;
         }
 
         public static int GetNewId(string table)
         {
-            if (String.IsNullOrEmpty(GetValuesForDropdown(Query.GetLastIdFromTable(table))[0]))
+            if ((String.IsNullOrEmpty(GetValuesForDropdown(Query.GetLastIdFromTable(table))[0])))
                 return 1;
             else
             {
