@@ -74,6 +74,17 @@
     <Compile Include="Forms\Entrance.Designer.cs">
       <DependentUpon>Entrance.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Charge.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Discount.cs" />
+    <Compile Include="Models\Entrance.cs" />
+    <Compile Include="Models\EntranceMethod.cs" />
+    <Compile Include="Models\Exit.cs" />
+    <Compile Include="Models\Service.cs" />
+    <Compile Include="Models\Transaction.cs" />
+    <Compile Include="Models\TransactionType.cs" />
+    <Compile Include="Models\Visit.cs" />
+    <Compile Include="Models\Watch.cs" />
     <Compile Include="Services\DbService.cs" />
     <Compile Include="Services\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

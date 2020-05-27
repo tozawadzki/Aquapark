@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Windows.Forms;
+using Aquapark.Models;
 using Aquapark.Services;
 
 namespace Aquapark
 {
     public partial class Entrance : Form
     {
+        public static Customer NewCustomer;
+        public static Watch NewWatch;
+        public static Entrances NewEntrance;
         public Entrance()
         {
             InitializeComponent();
@@ -23,6 +27,7 @@ namespace Aquapark
         {
             var newId = DbService.GetNewId("Customers");
             var isSuccess = DbService.InsertData(Query.CreateCustomer(newId, firstName.Text, lastName.Text, discount.SelectedIndex + 1));
+            NewCustomer = new Customer(newId, discount.SelectedIndex + 1, firstName.Text, lastName.Text);
             return DbService.IsSuccess(isSuccess, newId);
         }
 
@@ -34,6 +39,8 @@ namespace Aquapark
             {
                 var entranceId = DbService.GetNewId("Entrances");
                 var isSuccess = DbService.InsertData(Query.CreateEntrance(entranceId, watchId, entranceMethod.SelectedIndex + 1, DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"), customerId, Convert.ToInt32(hours.Text)));
+                NewEntrance = new Entrances(entranceId, watchId, entranceMethod.SelectedIndex + 1, DateTime.Now,
+                    customerId, Convert.ToInt32(hours.Text));
                 return DbService.IsSuccess(isSuccess, entranceId);
             }
 
@@ -44,6 +51,7 @@ namespace Aquapark
         {
             var newId = DbService.GetNewId("Watches");
             var serviceId = service.SelectedIndex+1;
+            NewWatch = new Watch(newId, customerId, serviceId);
             return DbService.InsertData(Query.CreateWatch(newId, customerId, serviceId));
         }
 

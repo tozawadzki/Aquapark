@@ -109,21 +109,21 @@ namespace Aquapark.Services
         public static string GetPricePerHour(int ServiceId)
         {
             var query =
-            $"SELECT Services.priceperhour FROM services WHERE services.serviceid = {ServiceId};";
+            $"SELECT Services.priceperhour FROM services WHERE services.id = {ServiceId};";
             return query;
         }
 
         public static string GetPricePerMinute(int ServiceId)
         {
             var query =
-            $"SELECT Services.priceperminute FROM services WHERE services.serviceid = {ServiceId};";
+            $"SELECT Services.priceperminute FROM services WHERE services.id = {ServiceId};";
             return query;
         }
 
         public static string GetServiceName(int ServiceId)
         {
             var query =
-            $"SELECT Services.name FROM services WHERE services.serviceid = {ServiceId};";
+            $"SELECT Services.name FROM services WHERE services.id = {ServiceId};";
             return query;
         }
 
@@ -135,21 +135,21 @@ namespace Aquapark.Services
         public static string GetCustomerId(int WatchId)
         {
             var query =
-            $"SELECT Watches.Customerid FROM watches WHERE watches.watchid = {WatchId};";
+            $"SELECT Watches.Customerid FROM watches WHERE watches.id = {WatchId};";
             return query;
         }
 
         public static string GetServiceId(int WatchId)
         {
             var query =
-            $"SELECT Watches.Serviceid FROM watches WHERE watches.watchid = {WatchId};";
+            $"SELECT Watches.Serviceid FROM watches WHERE watches.id = {WatchId};";
             return query;
         }
 
         public static string GetDiscountAmount(int DiscountId)
         {
             var query =
-            $"SELECT Discounts.amount FROM discounts WHERE discounts.discountid = {DiscountId};";
+            $"SELECT Discounts.amount FROM discounts WHERE discounts.id = {DiscountId};";
             return query;
         }
 

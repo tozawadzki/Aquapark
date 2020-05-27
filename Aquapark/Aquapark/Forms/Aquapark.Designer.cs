@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.serviceLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -55,6 +55,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.adminButton = new System.Windows.Forms.Button();
+            this.watchIdLabel = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -66,14 +68,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Strefa:";
             // 
-            // label2
+            // serviceLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(56, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "serviceName";
+            this.serviceLabel.AutoSize = true;
+            this.serviceLabel.Location = new System.Drawing.Point(56, 9);
+            this.serviceLabel.Name = "serviceLabel";
+            this.serviceLabel.Size = new System.Drawing.Size(69, 13);
+            this.serviceLabel.TabIndex = 1;
+            this.serviceLabel.Text = "serviceName";
             // 
             // label3
             // 
@@ -213,7 +215,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(1, 35);
+            this.label8.Location = new System.Drawing.Point(1, 51);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(49, 13);
             this.label8.TabIndex = 17;
@@ -221,7 +223,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(56, 32);
+            this.textBox1.Location = new System.Drawing.Point(56, 51);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(69, 20);
             this.textBox1.TabIndex = 18;
@@ -296,11 +298,31 @@
             this.adminButton.UseVisualStyleBackColor = true;
             this.adminButton.Click += new System.EventHandler(this.adminButton_Click);
             // 
+            // watchIdLabel
+            // 
+            this.watchIdLabel.AutoSize = true;
+            this.watchIdLabel.Location = new System.Drawing.Point(56, 30);
+            this.watchIdLabel.Name = "watchIdLabel";
+            this.watchIdLabel.Size = new System.Drawing.Size(45, 13);
+            this.watchIdLabel.TabIndex = 28;
+            this.watchIdLabel.Text = "watchId";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(1, 30);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(50, 13);
+            this.label14.TabIndex = 27;
+            this.label14.Text = "Zegarek:";
+            // 
             // Aquapark
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 265);
+            this.Controls.Add(this.watchIdLabel);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.adminButton);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -326,7 +348,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.serviceLabel);
             this.Controls.Add(this.label1);
             this.Name = "Aquapark";
             this.Text = "Aquapark";
@@ -338,7 +360,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label serviceLabel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -364,5 +386,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button adminButton;
+        private System.Windows.Forms.Label watchIdLabel;
+        private System.Windows.Forms.Label label14;
     }
 }
