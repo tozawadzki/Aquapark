@@ -57,10 +57,17 @@ namespace Aquapark.Services
                 $"INSERT INTO Customers(Id, FirstName, LastName, DiscountId) VALUES ({customerId}, '{firstName}', '{lastName}', {discountId})";
             return query;
         }
-        public static string CreateEntrance(int entranceId, int watchId, int entranceMethodId, DateTime time, int customerId, int hours)
+        public static string CreateEntrance(int entranceId, int watchId, int entranceMethodId, string time, int customerId, int hours)
         {
             var query =
-                $"INSERT INTO Customers(Id, FirstName, LastName, DiscountId) VALUES ({entranceId}, {watchId}, {entranceMethodId}, {time}, {customerId}, {hours})";
+                $"INSERT INTO Entrances(Id, WatchId, EntranceMethodId, Time, CustomerId, Hours) VALUES ({entranceId}, {watchId}, {entranceMethodId}, '{time}', {customerId}, {hours})";
+            return query;
+        }
+
+        public static string CreateWatch(int watchId, int customerId, int serviceId)
+        {
+            var query =
+                $"INSERT INTO Watches(Id, CustomerId, ServiceId) VALUES ({watchId}, {customerId}, {serviceId})";
             return query;
         }
 

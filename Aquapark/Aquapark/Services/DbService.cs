@@ -63,7 +63,13 @@ namespace Aquapark.Services
 
         public static int GetNewId(string table)
         {
-            return Convert.ToInt32(GetValuesForDropdown(Query.GetLastIdFromTable(table)).ToList().FirstOrDefault()) + 1;
+            if (String.IsNullOrEmpty(GetValuesForDropdown(Query.GetLastIdFromTable(table))[0]))
+                return 1;
+            else
+            {
+                var id = Convert.ToInt32(GetValuesForDropdown(Query.GetLastIdFromTable(table)).ToList().FirstOrDefault()) + 1;
+                return id;
+            }
         }
 
         public static int IsSuccess(int isSuccess, int Id)

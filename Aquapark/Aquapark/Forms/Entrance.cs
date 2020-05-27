@@ -29,20 +29,22 @@ namespace Aquapark
         private int CreateEntrance()
         {
             var customerId = CreateCustomer();
-            var watchId = GetWatchId();
-            if (CreateCustomer() != 0)
+            var watchId = CreateWatch(customerId);
+            if (customerId != 0)
             {
                 var entranceId = DbService.GetNewId("Entrances");
-                var isSuccess = DbService.InsertData(Query.CreateEntrance(entranceId, watchId, entranceMethod.SelectedIndex + 1, DateTime.Now, customerId, Convert.ToInt32(hours.Text)));
+                var isSuccess = DbService.InsertData(Query.CreateEntrance(entranceId, watchId, entranceMethod.SelectedIndex + 1, DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"), customerId, Convert.ToInt32(hours.Text)));
                 return DbService.IsSuccess(isSuccess, entranceId);
             }
 
             return 0;
         }
 
-        private int GetWatchId()
+        private int CreateWatch(int customerId)
         {
-            return 0;
+            var newId = DbService.GetNewId("Watches");
+            var serviceId = service.SelectedIndex+1;
+            return DbService.InsertData(Query.CreateWatch(newId, customerId, serviceId));
         }
 
         private void entryButton_Click(object sender, EventArgs e)
