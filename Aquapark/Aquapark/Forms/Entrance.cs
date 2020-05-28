@@ -34,8 +34,7 @@ namespace Aquapark
         private int CreateEntrance()
         {
             var customerId = CreateCustomer();
-            var tmp = CreateWatch(customerId);
-            var watchId = NewWatch.Id;
+            var watchId = CreateWatch(customerId);
             if (customerId != 0)
             {
                 var entranceId = DbService.GetNewId("Entrances");
@@ -58,12 +57,10 @@ namespace Aquapark
 
         private int CreateCharge()
         {
-            //var newId = DbService.GetNewId("Charges"); -> nie działa nie wiadomo czemu
-            Random rnd = new Random();
-            var newId = rnd.Next(0, 50000);
+            var newId = DbService.GetNewId("Charges");
             var hours = NewEntrance.Hours;
             var pricePerHour = hours*12; // docelowo wartość z bazy
-            return 1; // też nie wiem o co chodzi, na bazie insert działa a tutaj nie przechodzi -> DbService.InsertData(Query.CreateCharge(newId, pricePerHour, NewWatch.Id ));
+            return DbService.InsertData(Query.CreateCharge(newId, pricePerHour, NewWatch.Id ));
         }
 
         private int CreateWatch(int customerId)

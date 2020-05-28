@@ -25,9 +25,9 @@ namespace Aquapark
             CurrentCustomer = Entrance.NewCustomer;
             CurrentWatch = Entrance.NewWatch;
             CurrentEntrance = Entrance.NewEntrance;
-            serviceLabel.Text = CurrentWatch.ServiceId.ToString(); // Ma być tak, nie działa z niewiadomych powodów -> DbService.GetValuesForDropdown(Query.GetServiceName(CurrentWatch.ServiceId))[0];
+            serviceLabel.Text = DbService.GetValue(Query.GetServiceName(CurrentWatch.ServiceId)).ToString();
             watchIdLabel.Text = CurrentWatch.Id.ToString();
-            chargeTextBox.Text = DbService.GetValuesForDropdown(Query.GetAllCharges(CurrentWatch.Id))[0];
+            chargeTextBox.Text = DbService.GetValue(Query.GetAllCharges(CurrentWatch.Id)).ToString();
         }
 
         private void adminButton_Click(object sender, EventArgs e)

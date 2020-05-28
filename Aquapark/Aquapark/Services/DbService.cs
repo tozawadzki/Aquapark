@@ -9,7 +9,7 @@ namespace Aquapark.Services
 {
     public class DbService
     {
-        private const string connectionData = "Data Source=XE;User Id=aquapark;Password=123;";
+        private const string connectionData = "Data Source=XE;User Id=aquapark;Password=7zmty6q2e;";
         public static DataSet GetData(string query)
         {
             var connectionString = connectionData;
@@ -20,6 +20,7 @@ namespace Aquapark.Services
                 var oracleDataAdapter = new OracleDataAdapter(command);
                 var dataSet = new DataSet();
                 oracleDataAdapter.Fill(dataSet);
+                connection.Close();
                 if (dataSet.Tables.Count > 0)
                 {
                     return dataSet;
@@ -37,7 +38,9 @@ namespace Aquapark.Services
                 {
                     connection.Open();
                     var command = new OracleCommand(query, connection);
-                    return command.ExecuteNonQuery();
+                    var result = command.ExecuteNonQuery();
+                    connection.Close();
+                    return result;
                 }
             }
             catch (OracleException ex)
@@ -63,15 +66,28 @@ namespace Aquapark.Services
 
         public static int GetNewId(string table)
         {
-            if ((String.IsNullOrEmpty(GetValuesForDropdown(Query.GetLastIdFromTable(table))[0])))
+            var lastId = GetValue(Query.GetLastIdFromTable(table));
+            if (lastId == null)
                 return 1;
             else
             {
-                var id = Convert.ToInt32(GetValuesForDropdown(Query.GetLastIdFromTable(table)).ToList().FirstOrDefault()) + 1;
+                var id = Convert.ToInt32(lastId).ToString() + 1;
                 return id;
             }
         }
 
+        public static object GetValue(string query)
+        {
+            var connectionString = connectionData;
+            using (var connection = new OracleConnection(connectionString))
+            {
+                var command = new OracleCommand(query, connection);
+                connection.Open();
+                var value = command.ExecuteScalar();
+                connection.Close();
+                return value;
+            }
+        }
         public static int IsSuccess(int isSuccess, int Id)
         {
             if (isSuccess == 1)

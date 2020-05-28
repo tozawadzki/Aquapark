@@ -77,7 +77,7 @@
     <Compile Include="Models\Charge.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Discount.cs" />
-    <Compile Include="Models\Entrance.cs" />
+    <Compile Include="Models\Entrances.cs" />
     <Compile Include="Models\EntranceMethod.cs" />
     <Compile Include="Models\Exit.cs" />
     <Compile Include="Models\Service.cs" />
