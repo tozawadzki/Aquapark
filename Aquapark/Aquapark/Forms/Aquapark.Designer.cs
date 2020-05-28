@@ -35,20 +35,20 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.buttonGymEntry = new System.Windows.Forms.Button();
+            this.buttonGymExit = new System.Windows.Forms.Button();
+            this.buttonPoolExit = new System.Windows.Forms.Button();
+            this.buttonPoolEntry = new System.Windows.Forms.Button();
+            this.buttonSaunaExit = new System.Windows.Forms.Button();
+            this.buttonSaunaEntry = new System.Windows.Forms.Button();
+            this.buttonAquaparkExit = new System.Windows.Forms.Button();
+            this.buttonAquaparkEntry = new System.Windows.Forms.Button();
+            this.buttonServiceExit = new System.Windows.Forms.Button();
+            this.buttonServiceEntry = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxTime = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxElapsed = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.chargeTextBox = new System.Windows.Forms.TextBox();
             this.leaveButton = new System.Windows.Forms.Button();
@@ -122,95 +122,97 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Cośtam";
             // 
-            // button1
+            // buttonGymEntry
             // 
-            this.button1.Location = new System.Drawing.Point(257, 25);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Wejdź";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonGymEntry.Location = new System.Drawing.Point(257, 25);
+            this.buttonGymEntry.Name = "buttonGymEntry";
+            this.buttonGymEntry.Size = new System.Drawing.Size(75, 23);
+            this.buttonGymEntry.TabIndex = 7;
+            this.buttonGymEntry.Text = "Wejdź Siłownia";
+            this.buttonGymEntry.UseVisualStyleBackColor = true;
+            this.buttonGymEntry.Click += new System.EventHandler(this.buttonGymEntry_Click);
             // 
-            // button2
+            // buttonGymExit
             // 
-            this.button2.Location = new System.Drawing.Point(257, 54);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Wyjdź";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonGymExit.Location = new System.Drawing.Point(257, 54);
+            this.buttonGymExit.Name = "buttonGymExit";
+            this.buttonGymExit.Size = new System.Drawing.Size(75, 23);
+            this.buttonGymExit.TabIndex = 8;
+            this.buttonGymExit.Text = "Wyjdź Siłownia";
+            this.buttonGymExit.UseVisualStyleBackColor = true;
+            this.buttonGymExit.Click += new System.EventHandler(this.buttonGymExit_Click);
             // 
-            // button3
+            // buttonPoolExit
             // 
-            this.button3.Location = new System.Drawing.Point(338, 54);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Wyjdź";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonPoolExit.Location = new System.Drawing.Point(338, 54);
+            this.buttonPoolExit.Name = "buttonPoolExit";
+            this.buttonPoolExit.Size = new System.Drawing.Size(75, 23);
+            this.buttonPoolExit.TabIndex = 10;
+            this.buttonPoolExit.Text = "Wyjdź Basen";
+            this.buttonPoolExit.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // buttonPoolEntry
             // 
-            this.button4.Location = new System.Drawing.Point(338, 25);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Wejdź";
-            this.button4.UseVisualStyleBackColor = true;
+            this.buttonPoolEntry.Location = new System.Drawing.Point(338, 25);
+            this.buttonPoolEntry.Name = "buttonPoolEntry";
+            this.buttonPoolEntry.Size = new System.Drawing.Size(75, 23);
+            this.buttonPoolEntry.TabIndex = 9;
+            this.buttonPoolEntry.Text = "Wejdź Basen";
+            this.buttonPoolEntry.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // buttonSaunaExit
             // 
-            this.button5.Location = new System.Drawing.Point(419, 54);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 12;
-            this.button5.Text = "Wyjdź";
-            this.button5.UseVisualStyleBackColor = true;
+            this.buttonSaunaExit.Location = new System.Drawing.Point(419, 54);
+            this.buttonSaunaExit.Name = "buttonSaunaExit";
+            this.buttonSaunaExit.Size = new System.Drawing.Size(75, 23);
+            this.buttonSaunaExit.TabIndex = 12;
+            this.buttonSaunaExit.Text = "Wyjdź Sauna";
+            this.buttonSaunaExit.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // buttonSaunaEntry
             // 
-            this.button6.Location = new System.Drawing.Point(419, 25);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 11;
-            this.button6.Text = "Wejdź";
-            this.button6.UseVisualStyleBackColor = true;
+            this.buttonSaunaEntry.Location = new System.Drawing.Point(419, 25);
+            this.buttonSaunaEntry.Name = "buttonSaunaEntry";
+            this.buttonSaunaEntry.Size = new System.Drawing.Size(75, 23);
+            this.buttonSaunaEntry.TabIndex = 11;
+            this.buttonSaunaEntry.Text = "Wejdź Sauna";
+            this.buttonSaunaEntry.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // buttonAquaparkExit
             // 
-            this.button7.Location = new System.Drawing.Point(504, 54);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 14;
-            this.button7.Text = "Wyjdź";
-            this.button7.UseVisualStyleBackColor = true;
+            this.buttonAquaparkExit.Location = new System.Drawing.Point(504, 54);
+            this.buttonAquaparkExit.Name = "buttonAquaparkExit";
+            this.buttonAquaparkExit.Size = new System.Drawing.Size(75, 23);
+            this.buttonAquaparkExit.TabIndex = 14;
+            this.buttonAquaparkExit.Text = "Wyjdź Aquapark";
+            this.buttonAquaparkExit.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // buttonAquaparkEntry
             // 
-            this.button8.Location = new System.Drawing.Point(504, 25);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 13;
-            this.button8.Text = "Wejdź";
-            this.button8.UseVisualStyleBackColor = true;
+            this.buttonAquaparkEntry.Location = new System.Drawing.Point(504, 25);
+            this.buttonAquaparkEntry.Name = "buttonAquaparkEntry";
+            this.buttonAquaparkEntry.Size = new System.Drawing.Size(75, 23);
+            this.buttonAquaparkEntry.TabIndex = 13;
+            this.buttonAquaparkEntry.Text = "Wejdź Aquapark";
+            this.buttonAquaparkEntry.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // buttonServiceExit
             // 
-            this.button9.Location = new System.Drawing.Point(587, 54);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 16;
-            this.button9.Text = "Wyjdź";
-            this.button9.UseVisualStyleBackColor = true;
+            this.buttonServiceExit.Location = new System.Drawing.Point(587, 54);
+            this.buttonServiceExit.Name = "buttonServiceExit";
+            this.buttonServiceExit.Size = new System.Drawing.Size(75, 23);
+            this.buttonServiceExit.TabIndex = 16;
+            this.buttonServiceExit.Text = "Wyjdź";
+            this.buttonServiceExit.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // buttonServiceEntry
             // 
-            this.button10.Location = new System.Drawing.Point(587, 25);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 23);
-            this.button10.TabIndex = 15;
-            this.button10.Text = "Wejdź";
-            this.button10.UseVisualStyleBackColor = true;
+            this.buttonServiceEntry.Location = new System.Drawing.Point(587, 25);
+            this.buttonServiceEntry.Name = "buttonServiceEntry";
+            this.buttonServiceEntry.Size = new System.Drawing.Size(75, 23);
+            this.buttonServiceEntry.TabIndex = 15;
+            this.buttonServiceEntry.Text = "Wejdź";
+            this.buttonServiceEntry.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -221,12 +223,12 @@
             this.label8.TabIndex = 17;
             this.label8.Text = "Godzina:";
             // 
-            // textBox1
+            // textBoxTime
             // 
-            this.textBox1.Location = new System.Drawing.Point(56, 51);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(69, 20);
-            this.textBox1.TabIndex = 18;
+            this.textBoxTime.Location = new System.Drawing.Point(56, 51);
+            this.textBoxTime.Name = "textBoxTime";
+            this.textBoxTime.Size = new System.Drawing.Size(116, 20);
+            this.textBoxTime.TabIndex = 18;
             // 
             // label9
             // 
@@ -237,12 +239,12 @@
             this.label9.TabIndex = 19;
             this.label9.Text = "Czas na strefie";
             // 
-            // textBox2
+            // textBoxElapsed
             // 
-            this.textBox2.Location = new System.Drawing.Point(683, 35);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(69, 20);
-            this.textBox2.TabIndex = 20;
+            this.textBoxElapsed.Location = new System.Drawing.Point(683, 35);
+            this.textBoxElapsed.Name = "textBoxElapsed";
+            this.textBoxElapsed.Size = new System.Drawing.Size(105, 20);
+            this.textBoxElapsed.TabIndex = 20;
             // 
             // label10
             // 
@@ -329,20 +331,20 @@
             this.Controls.Add(this.leaveButton);
             this.Controls.Add(this.chargeTextBox);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBoxElapsed);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxTime);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonServiceExit);
+            this.Controls.Add(this.buttonServiceEntry);
+            this.Controls.Add(this.buttonAquaparkExit);
+            this.Controls.Add(this.buttonAquaparkEntry);
+            this.Controls.Add(this.buttonSaunaExit);
+            this.Controls.Add(this.buttonSaunaEntry);
+            this.Controls.Add(this.buttonPoolExit);
+            this.Controls.Add(this.buttonPoolEntry);
+            this.Controls.Add(this.buttonGymExit);
+            this.Controls.Add(this.buttonGymEntry);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -366,20 +368,20 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button buttonGymEntry;
+        private System.Windows.Forms.Button buttonGymExit;
+        private System.Windows.Forms.Button buttonPoolExit;
+        private System.Windows.Forms.Button buttonPoolEntry;
+        private System.Windows.Forms.Button buttonSaunaExit;
+        private System.Windows.Forms.Button buttonSaunaEntry;
+        private System.Windows.Forms.Button buttonAquaparkExit;
+        private System.Windows.Forms.Button buttonAquaparkEntry;
+        private System.Windows.Forms.Button buttonServiceExit;
+        private System.Windows.Forms.Button buttonServiceEntry;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxTime;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxElapsed;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox chargeTextBox;
         private System.Windows.Forms.Button leaveButton;
