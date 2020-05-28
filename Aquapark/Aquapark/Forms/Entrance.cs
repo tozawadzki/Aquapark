@@ -68,7 +68,8 @@ namespace Aquapark
             var newId = DbService.GetNewId("Watches");
             var serviceId = service.SelectedIndex+1;
             NewWatch = new Watch(newId, customerId, serviceId);
-            return DbService.InsertData(Query.CreateWatch(newId, customerId, serviceId));
+            DbService.InsertData(Query.CreateWatch(newId, customerId, serviceId));
+            return newId;
         }
 
         private void entryButton_Click(object sender, EventArgs e)

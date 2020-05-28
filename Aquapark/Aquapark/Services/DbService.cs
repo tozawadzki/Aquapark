@@ -71,7 +71,7 @@ namespace Aquapark.Services
                 return 1;
             else
             {
-                var id = Convert.ToInt32(lastId).ToString() + 1;
+                var id = Convert.ToInt32(lastId) + 1;
                 return id;
             }
         }
