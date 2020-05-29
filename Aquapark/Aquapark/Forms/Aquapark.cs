@@ -10,14 +10,20 @@ namespace Aquapark
         public Customer CurrentCustomer;
         public Watch CurrentWatch;
         public Entrances CurrentEntrance;
-        private int _ticks;
-        
+        public Exit Exit;
+        private int _elapsedTicks;
+        private int _timeLeft;
+        private Timer tmr = null;
+        private Timer tmrelapsed = null;
+        private Timer tmrLeft = null;
+
         public Aquapark()
         {
             InitializeComponent();
             InitializeFields();
             MessageBox.Show("Witamy w Aquaparku!");
-            StartTimer();
+            StartTimeElapsed();
+            StartTimeLeft();
         }
 
         private void InitializeFields()
@@ -26,8 +32,24 @@ namespace Aquapark
             CurrentWatch = Entrance.NewWatch;
             CurrentEntrance = Entrance.NewEntrance;
             serviceLabel.Text = DbService.GetValue(Query.GetServiceName(CurrentWatch.ServiceId)).ToString();
-            watchIdLabel.Text = CurrentWatch.Id.ToString();
             chargeTextBox.Text = DbService.GetValue(Query.GetAllCharges(CurrentWatch.Id)).ToString();
+        }
+
+        private void StartTimeLeft()
+        {
+            _timeLeft = CurrentEntrance.Hours;
+            tmrLeft = new Timer();
+            tmrLeft.Interval = 1000;
+            tmrLeft.Tick -= new EventHandler(timerLeft_Tick);
+            tmrLeft.Enabled = true;
+        }
+
+        private void StartTimeElapsed()
+        {
+            tmr = new Timer();
+            tmr.Interval = 1000;
+            tmr.Tick += new EventHandler(timerTime_Tick);
+            tmr.Enabled = true;
         }
 
         private void adminButton_Click(object sender, EventArgs e)
@@ -39,40 +61,45 @@ namespace Aquapark
 
         private void leaveButton_Click(object sender, EventArgs e)
         {
+            CreateExit();
+            CreateVisit();
             Application.Exit();
         }
 
-        System.Windows.Forms.Timer tmr = null;
-        System.Windows.Forms.Timer tmrelapsed = null;
-
-        private void StartTimer()
+        private void CreateExit()
         {
-            tmr = new System.Windows.Forms.Timer();
-            tmr.Interval = 60000;
-            tmr.Tick += new EventHandler(tmr_Tick);
-            tmr.Enabled = true;
+            var newId = DbService.GetNewId("Exits");
+            var watchId = CurrentWatch.Id;
+            var time = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
+            DbService.InsertData(Query.CreateExit(newId, watchId, time));
+            Exit = new Exit(newId, watchId, DateTime.Now);
         }
 
-        void tmr_Tick(object sender, EventArgs e)
+        private void CreateVisit()
         {
-            textBoxTime.Text = DateTime.Now.ToString();
+            var newId = DbService.GetNewId("Visits");
+            var watchId = CurrentWatch.Id;
+            var serviceId = CurrentWatch.ServiceId;
+            var customerId = CurrentCustomer.Id;
+            var exitPayment = (decimal)Convert.ToInt32(chargeTextBox.Text);
+            DbService.InsertData(Query.CreateVisit(newId, watchId, serviceId, customerId, exitPayment));
+            Exit = new Exit(newId, watchId, DateTime.Now);
         }
 
         private void buttonGymEntry_Click(object sender, EventArgs e)
         {
-            tmrelapsed = new System.Windows.Forms.Timer();
+            tmrelapsed = new Timer();
             tmrelapsed.Interval = 60000;
             tmrelapsed.Tick += new EventHandler(tmrelapsed_Tick);
             tmrelapsed.Start();
-            _ticks = 0;
-            textBoxElapsed.Text = "0 min";
+            _elapsedTicks = 0;
+            labelElapsed.Text = "0 min";
         }
-
 
         private void tmrelapsed_Tick(object sender, EventArgs e)
         {
-            _ticks++;
-            textBoxElapsed.Text = _ticks.ToString() + " min";
+            _elapsedTicks++;
+            labelElapsed.Text = _elapsedTicks.ToString() + " min";
         }
 
         private void buttonGymExit_Click(object sender, EventArgs e)
@@ -80,17 +107,17 @@ namespace Aquapark
             tmrelapsed.Stop();
             tmrelapsed.Start();
             tmrelapsed.Stop();
-            textBoxElapsed.Text = " ";
+            labelElapsed.Text = " ";
         }
 
         private void buttonPoolEntry_Click(object sender, EventArgs e)
         {
-            tmrelapsed = new System.Windows.Forms.Timer();
+            tmrelapsed = new Timer();
             tmrelapsed.Interval = 60000;
             tmrelapsed.Tick += new EventHandler(tmrelapsed_Tick);
             tmrelapsed.Start();
-            _ticks = 0;
-            textBoxElapsed.Text = "0 min";
+            _elapsedTicks = 0;
+            labelElapsed.Text = "0 min";
         }
 
         private void buttonPoolExit_Click(object sender, EventArgs e)
@@ -98,17 +125,17 @@ namespace Aquapark
             tmrelapsed.Stop();
             tmrelapsed.Start();
             tmrelapsed.Stop();
-            textBoxElapsed.Text = " ";
+            labelElapsed.Text = " ";
         }
 
         private void buttonSaunaEntry_Click(object sender, EventArgs e)
         {
-            tmrelapsed = new System.Windows.Forms.Timer();
+            tmrelapsed = new Timer();
             tmrelapsed.Interval = 60000;
             tmrelapsed.Tick += new EventHandler(tmrelapsed_Tick);
             tmrelapsed.Start();
-            _ticks = 0;
-            textBoxElapsed.Text = "0 min";
+            _elapsedTicks = 0;
+            labelElapsed.Text = "0 min";
         }
 
         private void buttonSaunaExit_Click(object sender, EventArgs e)
@@ -116,17 +143,17 @@ namespace Aquapark
             tmrelapsed.Stop();
             tmrelapsed.Start();
             tmrelapsed.Stop();
-            textBoxElapsed.Text = " ";
+            labelElapsed.Text = " ";
         }
 
         private void buttonAquaparkEntry_Click(object sender, EventArgs e)
         {
-            tmrelapsed = new System.Windows.Forms.Timer();
+            tmrelapsed = new Timer();
             tmrelapsed.Interval = 60000;
             tmrelapsed.Tick += new EventHandler(tmrelapsed_Tick);
             tmrelapsed.Start();
-            _ticks = 0;
-            textBoxElapsed.Text = "0 min";
+            _elapsedTicks = 0;
+            labelElapsed.Text = "0 min";
         }
 
         private void buttonAquaparkExit_Click(object sender, EventArgs e)
@@ -134,17 +161,17 @@ namespace Aquapark
             tmrelapsed.Stop();
             tmrelapsed.Start();
             tmrelapsed.Stop();
-            textBoxElapsed.Text = " ";
+            labelElapsed.Text = " ";
         }
 
         private void buttonServiceEntry_Click(object sender, EventArgs e)
         {
-            tmrelapsed = new System.Windows.Forms.Timer();
+            tmrelapsed = new Timer();
             tmrelapsed.Interval = 60000;
             tmrelapsed.Tick += new EventHandler(tmrelapsed_Tick);
             tmrelapsed.Start();
-            _ticks = 0;
-            textBoxElapsed.Text = "0 min";
+            _elapsedTicks = 0;
+            labelElapsed.Text = "0 min";
         }
 
         private void buttonServiceExit_Click(object sender, EventArgs e)
@@ -152,7 +179,22 @@ namespace Aquapark
             tmrelapsed.Stop();
             tmrelapsed.Start();
             tmrelapsed.Stop();
-            textBoxElapsed.Text = " ";
+            labelElapsed.Text = " ";
+        }
+
+        private void timerTime_Tick(object sender, EventArgs e)
+        {
+            labelTime.Text = DateTime.Now.ToString();
+        }
+
+        private void Aquapark_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timerLeft_Tick(object sender, EventArgs e)
+        {
+            labelTimeLeft.Text = DateTime.Now.ToShortTimeString();
         }
     }
 }

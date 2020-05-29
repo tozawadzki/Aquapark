@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.serviceLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,24 +46,25 @@
             this.buttonAquaparkEntry = new System.Windows.Forms.Button();
             this.buttonServiceExit = new System.Windows.Forms.Button();
             this.buttonServiceEntry = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBoxTime = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBoxElapsed = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.chargeTextBox = new System.Windows.Forms.TextBox();
             this.leaveButton = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.adminButton = new System.Windows.Forms.Button();
-            this.watchIdLabel = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.timerTime = new System.Windows.Forms.Timer(this.components);
+            this.labelTime = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelElapsed = new System.Windows.Forms.Label();
+            this.labelTimeLeft = new System.Windows.Forms.Label();
+            this.timerLeft = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(11, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 0;
@@ -71,7 +73,7 @@
             // serviceLabel
             // 
             this.serviceLabel.AutoSize = true;
-            this.serviceLabel.Location = new System.Drawing.Point(56, 9);
+            this.serviceLabel.Location = new System.Drawing.Point(55, 30);
             this.serviceLabel.Name = "serviceLabel";
             this.serviceLabel.Size = new System.Drawing.Size(69, 13);
             this.serviceLabel.TabIndex = 1;
@@ -222,22 +224,6 @@
             this.buttonServiceEntry.UseVisualStyleBackColor = true;
             this.buttonServiceEntry.Click += new System.EventHandler(this.buttonServiceEntry_Click);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(1, 51);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(49, 13);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "Godzina:";
-            // 
-            // textBoxTime
-            // 
-            this.textBoxTime.Location = new System.Drawing.Point(56, 51);
-            this.textBoxTime.Name = "textBoxTime";
-            this.textBoxTime.Size = new System.Drawing.Size(116, 20);
-            this.textBoxTime.TabIndex = 18;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -246,13 +232,6 @@
             this.label9.Size = new System.Drawing.Size(76, 13);
             this.label9.TabIndex = 19;
             this.label9.Text = "Czas na strefie";
-            // 
-            // textBoxElapsed
-            // 
-            this.textBoxElapsed.Location = new System.Drawing.Point(683, 35);
-            this.textBoxElapsed.Name = "textBoxElapsed";
-            this.textBoxElapsed.Size = new System.Drawing.Size(105, 20);
-            this.textBoxElapsed.TabIndex = 20;
             // 
             // label10
             // 
@@ -308,41 +287,64 @@
             this.adminButton.UseVisualStyleBackColor = true;
             this.adminButton.Click += new System.EventHandler(this.adminButton_Click);
             // 
-            // watchIdLabel
+            // timerTime
             // 
-            this.watchIdLabel.AutoSize = true;
-            this.watchIdLabel.Location = new System.Drawing.Point(56, 30);
-            this.watchIdLabel.Name = "watchIdLabel";
-            this.watchIdLabel.Size = new System.Drawing.Size(45, 13);
-            this.watchIdLabel.TabIndex = 28;
-            this.watchIdLabel.Text = "watchId";
+            this.timerTime.Tick += new System.EventHandler(this.timerTime_Tick);
             // 
-            // label14
+            // labelTime
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(1, 30);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(50, 13);
-            this.label14.TabIndex = 27;
-            this.label14.Text = "Zegarek:";
+            this.labelTime.AutoSize = true;
+            this.labelTime.Location = new System.Drawing.Point(20, 214);
+            this.labelTime.Name = "labelTime";
+            this.labelTime.Size = new System.Drawing.Size(0, 13);
+            this.labelTime.TabIndex = 29;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 13);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "Pozostało czasu:";
+            // 
+            // labelElapsed
+            // 
+            this.labelElapsed.AutoSize = true;
+            this.labelElapsed.Location = new System.Drawing.Point(687, 35);
+            this.labelElapsed.Name = "labelElapsed";
+            this.labelElapsed.Size = new System.Drawing.Size(0, 13);
+            this.labelElapsed.TabIndex = 31;
+            // 
+            // labelTimeLeft
+            // 
+            this.labelTimeLeft.AutoSize = true;
+            this.labelTimeLeft.Location = new System.Drawing.Point(104, 9);
+            this.labelTimeLeft.Name = "labelTimeLeft";
+            this.labelTimeLeft.Size = new System.Drawing.Size(44, 13);
+            this.labelTimeLeft.TabIndex = 32;
+            this.labelTimeLeft.Text = "timeLeft";
+            // 
+            // timerLeft
+            // 
+            this.timerLeft.Tick += new System.EventHandler(this.timerLeft_Tick);
             // 
             // Aquapark
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 265);
-            this.Controls.Add(this.watchIdLabel);
-            this.Controls.Add(this.label14);
+            this.Controls.Add(this.labelTimeLeft);
+            this.Controls.Add(this.labelElapsed);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelTime);
             this.Controls.Add(this.adminButton);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.leaveButton);
             this.Controls.Add(this.chargeTextBox);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBoxElapsed);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBoxTime);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.buttonServiceExit);
             this.Controls.Add(this.buttonServiceEntry);
             this.Controls.Add(this.buttonAquaparkExit);
@@ -362,6 +364,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Aquapark";
             this.Text = "Aquapark";
+            this.Load += new System.EventHandler(this.Aquapark_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -386,17 +389,18 @@
         private System.Windows.Forms.Button buttonAquaparkEntry;
         private System.Windows.Forms.Button buttonServiceExit;
         private System.Windows.Forms.Button buttonServiceEntry;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBoxTime;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBoxElapsed;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox chargeTextBox;
         private System.Windows.Forms.Button leaveButton;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button adminButton;
-        private System.Windows.Forms.Label watchIdLabel;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Timer timerTime;
+        private System.Windows.Forms.Label labelTime;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelElapsed;
+        private System.Windows.Forms.Label labelTimeLeft;
+        private System.Windows.Forms.Timer timerLeft;
     }
 }

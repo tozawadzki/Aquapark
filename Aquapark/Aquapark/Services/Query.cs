@@ -82,10 +82,10 @@ namespace Aquapark.Services
             return query;
         }
 
-        public static string CreateTransaction(int Id, int ServiceId, int WatchId, int TransactionTypeId, DateTime time)
+        public static string CreateTransaction(int Id, int ServiceId, int WatchId, int TransactionTypeId, string time)
         {
             var query =
-            $"INSERT INTO TRANSACTION (Id, Serviceid, TransactionTypeId, time) VALUES({Id}, {ServiceId}, {WatchId}, {TransactionTypeId}, {time}";
+            $"INSERT INTO TRANSACTION (Id, Serviceid, TransactionTypeId, time) VALUES({Id}, {ServiceId}, {WatchId}, {TransactionTypeId}, '{time}'";
             return query;
         }
 
@@ -171,10 +171,10 @@ namespace Aquapark.Services
             return query;
         }
 
-        public static string CreateExit(int watchId, DateTime time)
+        public static string CreateExit(int exitId, int watchId, string time)
         {
             var query =
-            $"INSERT INTO EXITS (WatchId, Time) VALUES({watchId}, {time})"; 
+            $"INSERT INTO EXITS (Id, WatchId, Time) VALUES({exitId}, {watchId}, '{time}')"; 
             return query;
         }
 
@@ -185,10 +185,10 @@ namespace Aquapark.Services
             return query;
         }
 
-        public static string CreateVisit(int watchId, int serviceId, int customerId, decimal amount)
+        public static string CreateVisit(int visitId, int watchId, int serviceId, int customerId, decimal exitPayment)
         {
             var query =
-            $"INSERT INTO Visits (WatchId, ServiceId, CustomerId, Amount) VALUES({watchId}, {serviceId}, {customerId}, {amount})";
+            $"INSERT INTO Visits (Id, WatchId, ServiceId, CustomerId, ExitPayment) VALUES({visitId}, {watchId}, {serviceId}, {customerId}, {exitPayment})";
             return query;
         }
 
