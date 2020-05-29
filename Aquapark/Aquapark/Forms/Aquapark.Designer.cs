@@ -150,6 +150,7 @@
             this.buttonPoolExit.TabIndex = 10;
             this.buttonPoolExit.Text = "Wyjdź Basen";
             this.buttonPoolExit.UseVisualStyleBackColor = true;
+            this.buttonPoolExit.Click += new System.EventHandler(this.buttonPoolExit_Click);
             // 
             // buttonPoolEntry
             // 
@@ -159,6 +160,7 @@
             this.buttonPoolEntry.TabIndex = 9;
             this.buttonPoolEntry.Text = "Wejdź Basen";
             this.buttonPoolEntry.UseVisualStyleBackColor = true;
+            this.buttonPoolEntry.Click += new System.EventHandler(this.buttonPoolEntry_Click);
             // 
             // buttonSaunaExit
             // 
@@ -168,6 +170,7 @@
             this.buttonSaunaExit.TabIndex = 12;
             this.buttonSaunaExit.Text = "Wyjdź Sauna";
             this.buttonSaunaExit.UseVisualStyleBackColor = true;
+            this.buttonSaunaExit.Click += new System.EventHandler(this.buttonSaunaExit_Click);
             // 
             // buttonSaunaEntry
             // 
@@ -177,6 +180,7 @@
             this.buttonSaunaEntry.TabIndex = 11;
             this.buttonSaunaEntry.Text = "Wejdź Sauna";
             this.buttonSaunaEntry.UseVisualStyleBackColor = true;
+            this.buttonSaunaEntry.Click += new System.EventHandler(this.buttonSaunaEntry_Click);
             // 
             // buttonAquaparkExit
             // 
@@ -186,6 +190,7 @@
             this.buttonAquaparkExit.TabIndex = 14;
             this.buttonAquaparkExit.Text = "Wyjdź Aquapark";
             this.buttonAquaparkExit.UseVisualStyleBackColor = true;
+            this.buttonAquaparkExit.Click += new System.EventHandler(this.buttonAquaparkExit_Click);
             // 
             // buttonAquaparkEntry
             // 
@@ -195,6 +200,7 @@
             this.buttonAquaparkEntry.TabIndex = 13;
             this.buttonAquaparkEntry.Text = "Wejdź Aquapark";
             this.buttonAquaparkEntry.UseVisualStyleBackColor = true;
+            this.buttonAquaparkEntry.Click += new System.EventHandler(this.buttonAquaparkEntry_Click);
             // 
             // buttonServiceExit
             // 
@@ -204,6 +210,7 @@
             this.buttonServiceExit.TabIndex = 16;
             this.buttonServiceExit.Text = "Wyjdź";
             this.buttonServiceExit.UseVisualStyleBackColor = true;
+            this.buttonServiceExit.Click += new System.EventHandler(this.buttonServiceExit_Click);
             // 
             // buttonServiceEntry
             // 
@@ -213,6 +220,7 @@
             this.buttonServiceEntry.TabIndex = 15;
             this.buttonServiceEntry.Text = "Wejdź";
             this.buttonServiceEntry.UseVisualStyleBackColor = true;
+            this.buttonServiceEntry.Click += new System.EventHandler(this.buttonServiceEntry_Click);
             // 
             // label8
             // 
