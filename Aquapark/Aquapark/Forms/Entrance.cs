@@ -59,8 +59,10 @@ namespace Aquapark
         {
             var newId = DbService.GetNewId("Charges");
             var hours = NewEntrance.Hours;
-            var pricePerHour = hours*12; // docelowo wartość z bazy
-            return DbService.InsertData(Query.CreateCharge(newId, pricePerHour, NewWatch.Id ));
+            var pricePerHour = Convert.ToInt32((DbService.GetValue(Query.GetPricePerHour(NewWatch.ServiceId))));
+            var chargeAmount = hours * pricePerHour;
+            DbService.InsertData(Query.CreateCharge(newId, chargeAmount, NewWatch.Id ));
+            return newId;
         }
 
         private int CreateWatch(int customerId)
@@ -88,5 +90,6 @@ namespace Aquapark
             tables1Form.Show();
             this.Hide();
         }
+
     }
 }

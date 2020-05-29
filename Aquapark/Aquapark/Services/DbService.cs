@@ -9,7 +9,7 @@ namespace Aquapark.Services
 {
     public class DbService
     {
-        private const string connectionData = "Data Source=XE;User Id=aquapark;Password=7zmty6q2e;";
+        private const string connectionData = "Data Source=XE;User Id=Aquapark;Password=7zmty6q2e;";
         public static DataSet GetData(string query)
         {
             var connectionString = connectionData;
@@ -66,8 +66,8 @@ namespace Aquapark.Services
 
         public static int GetNewId(string table)
         {
-            var lastId = GetValue(Query.GetLastIdFromTable(table));
-            if (lastId == null)
+            var lastId = GetValue(Query.GetLastIdFromTable(table)).ToString();
+            if (String.IsNullOrEmpty(lastId))
                 return 1;
             else
             {
@@ -79,15 +79,26 @@ namespace Aquapark.Services
         public static object GetValue(string query)
         {
             var connectionString = connectionData;
-            using (var connection = new OracleConnection(connectionString))
+            try
             {
-                var command = new OracleCommand(query, connection);
-                connection.Open();
-                var value = command.ExecuteScalar();
-                connection.Close();
-                return value;
+                using (var connection = new OracleConnection(connectionString))
+                {
+                    var command = new OracleCommand(query, connection);
+                    connection.Open();
+                    var value = command.ExecuteScalar();
+                    connection.Close();
+                    return value;
+                }
+            }
+            catch (OracleException ex)
+            {
+                string errorMessage = "Kod błędu: " + ex.ErrorCode + "\n" +
+                                      "Komunikat: " + ex.Message;
+                MessageBox.Show(errorMessage);
+                return 0;
             }
         }
+
         public static int IsSuccess(int isSuccess, int Id)
         {
             if (isSuccess == 1)
