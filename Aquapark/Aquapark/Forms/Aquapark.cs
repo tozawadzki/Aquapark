@@ -94,6 +94,15 @@ namespace Aquapark
             tmrelapsed.Start();
             _elapsedTicks = 0;
             labelElapsed.Text = "0 min";
+
+            buttonPoolEntry.Visible = false;
+            buttonPoolExit.Visible = false;
+            buttonSaunaEntry.Visible = false;
+            buttonSaunaExit.Visible = false;
+            buttonServiceEntry.Visible = false;
+            buttonServiceExit.Visible = false;
+            buttonAquaparkEntry.Visible = false;
+            buttonAquaparkExit.Visible = false;
         }
 
         private void tmrelapsed_Tick(object sender, EventArgs e)
@@ -108,6 +117,14 @@ namespace Aquapark
             tmrelapsed.Start();
             tmrelapsed.Stop();
             labelElapsed.Text = " ";
+            buttonPoolEntry.Visible = true;
+            buttonPoolExit.Visible = true; ;
+            buttonSaunaEntry.Visible = true; 
+            buttonSaunaExit.Visible = true; 
+            buttonServiceEntry.Visible = true;
+            buttonServiceExit.Visible = true;
+            buttonAquaparkExit.Visible = true;
+            buttonAquaparkEntry.Visible = true;
         }
 
         private void buttonPoolEntry_Click(object sender, EventArgs e)
@@ -118,6 +135,14 @@ namespace Aquapark
             tmrelapsed.Start();
             _elapsedTicks = 0;
             labelElapsed.Text = "0 min";
+            buttonGymEntry.Visible = false;
+            buttonGymExit.Visible = false;
+            buttonSaunaEntry.Visible = false;
+            buttonSaunaExit.Visible = false;
+            buttonServiceEntry.Visible = false;
+            buttonServiceExit.Visible = false;
+            buttonAquaparkEntry.Visible = false;
+            buttonAquaparkExit.Visible = false;
         }
 
         private void buttonPoolExit_Click(object sender, EventArgs e)
@@ -126,6 +151,14 @@ namespace Aquapark
             tmrelapsed.Start();
             tmrelapsed.Stop();
             labelElapsed.Text = " ";
+            buttonGymEntry.Visible = true;
+            buttonGymExit.Visible = true; ;
+            buttonSaunaEntry.Visible = true;
+            buttonSaunaExit.Visible = true;
+            buttonServiceEntry.Visible = true;
+            buttonServiceExit.Visible = true;
+            buttonAquaparkExit.Visible = true;
+            buttonAquaparkEntry.Visible = true;
         }
 
         private void buttonSaunaEntry_Click(object sender, EventArgs e)
@@ -136,6 +169,14 @@ namespace Aquapark
             tmrelapsed.Start();
             _elapsedTicks = 0;
             labelElapsed.Text = "0 min";
+            buttonGymEntry.Visible = false;
+            buttonGymExit.Visible = false;
+            buttonAquaparkEntry.Visible = false;
+            buttonAquaparkExit.Visible = false;
+            buttonServiceEntry.Visible = false;
+            buttonServiceExit.Visible = false;
+            buttonPoolEntry.Visible = false;
+            buttonPoolExit.Visible = false;
         }
 
         private void buttonSaunaExit_Click(object sender, EventArgs e)
@@ -144,6 +185,14 @@ namespace Aquapark
             tmrelapsed.Start();
             tmrelapsed.Stop();
             labelElapsed.Text = " ";
+            buttonPoolEntry.Visible = true;
+            buttonPoolExit.Visible = true; ;
+            buttonGymEntry.Visible = true;
+            buttonGymExit.Visible = true;
+            buttonServiceEntry.Visible = true;
+            buttonServiceExit.Visible = true;
+            buttonAquaparkExit.Visible = true;
+            buttonAquaparkEntry.Visible = true;
         }
 
         private void buttonAquaparkEntry_Click(object sender, EventArgs e)
@@ -154,6 +203,14 @@ namespace Aquapark
             tmrelapsed.Start();
             _elapsedTicks = 0;
             labelElapsed.Text = "0 min";
+            buttonGymEntry.Visible = false;
+            buttonGymExit.Visible = false;
+            buttonSaunaEntry.Visible = false;
+            buttonSaunaExit.Visible = false;
+            buttonServiceEntry.Visible = false;
+            buttonServiceExit.Visible = false;
+            buttonPoolEntry.Visible = false;
+            buttonPoolExit.Visible = false;
         }
 
         private void buttonAquaparkExit_Click(object sender, EventArgs e)
@@ -162,6 +219,14 @@ namespace Aquapark
             tmrelapsed.Start();
             tmrelapsed.Stop();
             labelElapsed.Text = " ";
+            buttonPoolEntry.Visible = true;
+            buttonPoolExit.Visible = true; ;
+            buttonSaunaEntry.Visible = true;
+            buttonSaunaExit.Visible = true;
+            buttonServiceEntry.Visible = true;
+            buttonServiceExit.Visible = true;
+            buttonGymExit.Visible = true;
+            buttonGymEntry.Visible = true;
         }
 
         private void buttonServiceEntry_Click(object sender, EventArgs e)
@@ -172,6 +237,16 @@ namespace Aquapark
             tmrelapsed.Start();
             _elapsedTicks = 0;
             labelElapsed.Text = "0 min";
+            buttonGymEntry.Visible = false;
+            buttonGymExit.Visible = false;
+            buttonAquaparkEntry.Visible = false;
+            buttonAquaparkExit.Visible = false;
+            buttonPoolEntry.Visible = false;
+            buttonPoolExit.Visible = false;
+            buttonPoolEntry.Visible = false;
+            buttonPoolExit.Visible = false;
+            buttonSaunaEntry.Visible = false;
+            buttonSaunaExit.Visible = false;
         }
 
         private void buttonServiceExit_Click(object sender, EventArgs e)
@@ -180,6 +255,14 @@ namespace Aquapark
             tmrelapsed.Start();
             tmrelapsed.Stop();
             labelElapsed.Text = " ";
+            buttonPoolEntry.Visible = true;
+            buttonPoolExit.Visible = true; ;
+            buttonSaunaEntry.Visible = true;
+            buttonSaunaExit.Visible = true;
+            buttonGymEntry.Visible = true;
+            buttonGymExit.Visible = true;
+            buttonAquaparkExit.Visible = true;
+            buttonAquaparkEntry.Visible = true;
         }
 
         private void timerTime_Tick(object sender, EventArgs e)
