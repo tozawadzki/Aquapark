@@ -14,6 +14,7 @@ namespace Aquapark
         private int _elapsedTicks;
         private int _timeLeft;
         private int _minutesLeft;
+        DateTime ExitTime;
         private Timer tmr = null;
         private Timer tmrelapsed = null;
         private Timer tmrLeft = null;
@@ -54,7 +55,9 @@ namespace Aquapark
             tmrLeft.Interval = 1000;
             tmrLeft.Tick += new EventHandler(timerLeft_Tick);
             tmrLeft.Enabled = true;
-            labelTimeLeft.Text = DateTime.Now.AddHours(_timeLeft).ToString();
+            ExitTime = DateTime.Now.AddHours(_timeLeft);
+            ExitTime = DateTime.ParseExact(ExitTime.ToString("yyyy-MM-dd HH:mm:ss"), "yyyy-MM-dd HH:mm:ss", null);
+            //labelTimeLeft.Text = DateTime.Now.AddHours(_timeLeft).ToString();
         }
 
         private void StartTimeElapsed()
@@ -291,8 +294,10 @@ namespace Aquapark
         private void timerLeft_Tick(object sender, EventArgs e)
         {
             //_minutesLeft--;
-            //labelTimeLeft.Text = DateTime.Now.AddMinutes(_minutesLeft).ToString();
-            ;
+            DateTime d = DateTime.Now;
+            d = DateTime.ParseExact(d.ToString("yyyy-MM-dd HH:mm:ss"), "yyyy-MM-dd HH:mm:ss", null); ;
+            labelTimeLeft.Text = (ExitTime - d).ToString();
+           
         }
 
     }
