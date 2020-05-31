@@ -13,6 +13,7 @@ namespace Aquapark
         public Exit Exit;
         private int _elapsedTicks;
         private int _timeLeft;
+        private int _minutesLeft;
         private Timer tmr = null;
         private Timer tmrelapsed = null;
         private Timer tmrLeft = null;
@@ -38,10 +39,22 @@ namespace Aquapark
         private void StartTimeLeft()
         {
             _timeLeft = CurrentEntrance.Hours;
-            tmrLeft = new Timer();
+            /*if (_timeLeft == 1)
+                {
+                _minutesLeft = 60;
+            }else if(_timeLeft == 1)
+            {
+                _minutesLeft = 120;
+            }
+            else if (_timeLeft == 3)
+            {
+                _minutesLeft = 180;
+            }*/
+                tmrLeft = new Timer();
             tmrLeft.Interval = 1000;
-            tmrLeft.Tick -= new EventHandler(timerLeft_Tick);
+            tmrLeft.Tick += new EventHandler(timerLeft_Tick);
             tmrLeft.Enabled = true;
+            labelTimeLeft.Text = DateTime.Now.AddHours(_timeLeft).ToString();
         }
 
         private void StartTimeElapsed()
@@ -277,7 +290,10 @@ namespace Aquapark
 
         private void timerLeft_Tick(object sender, EventArgs e)
         {
-            labelTimeLeft.Text = DateTime.Now.ToShortTimeString();
+            //_minutesLeft--;
+            //labelTimeLeft.Text = DateTime.Now.AddMinutes(_minutesLeft).ToString();
+            ;
         }
+
     }
 }
