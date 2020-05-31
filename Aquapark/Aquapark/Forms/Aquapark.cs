@@ -58,6 +58,7 @@ namespace Aquapark
             ExitTime = DateTime.Now.AddHours(_timeLeft);
             ExitTime = DateTime.ParseExact(ExitTime.ToString("yyyy-MM-dd HH:mm:ss"), "yyyy-MM-dd HH:mm:ss", null);
             //labelTimeLeft.Text = DateTime.Now.AddHours(_timeLeft).ToString();
+            labelExitTime.Text = DateTime.Now.AddHours(_timeLeft).ToString();
         }
 
         private void StartTimeElapsed()

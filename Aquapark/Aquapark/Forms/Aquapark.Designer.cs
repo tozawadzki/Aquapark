@@ -59,6 +59,8 @@
             this.labelElapsed = new System.Windows.Forms.Label();
             this.labelTimeLeft = new System.Windows.Forms.Label();
             this.timerLeft = new System.Windows.Forms.Timer(this.components);
+            this.label8 = new System.Windows.Forms.Label();
+            this.labelExitTime = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -329,11 +331,31 @@
             // 
             this.timerLeft.Tick += new System.EventHandler(this.timerLeft_Tick);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(12, 54);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(70, 13);
+            this.label8.TabIndex = 33;
+            this.label8.Text = "Czas wyjścia:";
+            // 
+            // labelExitTime
+            // 
+            this.labelExitTime.AutoSize = true;
+            this.labelExitTime.Location = new System.Drawing.Point(104, 54);
+            this.labelExitTime.Name = "labelExitTime";
+            this.labelExitTime.Size = new System.Drawing.Size(46, 13);
+            this.labelExitTime.TabIndex = 34;
+            this.labelExitTime.Text = "exitTime";
+            // 
             // Aquapark
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 265);
+            this.Controls.Add(this.labelExitTime);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.labelTimeLeft);
             this.Controls.Add(this.labelElapsed);
             this.Controls.Add(this.label2);
@@ -402,5 +424,7 @@
         private System.Windows.Forms.Label labelElapsed;
         private System.Windows.Forms.Label labelTimeLeft;
         private System.Windows.Forms.Timer timerLeft;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label labelExitTime;
     }
 }
