@@ -124,11 +124,6 @@ namespace Aquapark.Services
             return query;
         }
 
-        // public static string GetFreeServicesId(int EntranceMethodId)
-        // {
-        //      Nie wiem jak zrobić
-        //}
-
         public static string GetCustomerId(int watchId)
         {
             var query =
