@@ -9,7 +9,7 @@ namespace Aquapark.Services
 {
     public class DbService
     {
-        private const string connectionData = "Data Source=XE;User Id=aquapark;Password=123;";
+        private const string connectionData = "Data Source=XE;User Id=Aquapark;Password=7zmty6q2e;";
         public static DataSet GetData(string query)
         {
             var connectionString = connectionData;

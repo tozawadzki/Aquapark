@@ -54,7 +54,7 @@ namespace Aquapark
         {
             try
             {
-                entranceMethodsGridView.DataSource = DbService.GetData(Query.GetEntranceMethods).Tables[0].DefaultView;
+                transactionTypesGridView.DataSource = DbService.GetData(Query.GetTransactionTypes).Tables[0].DefaultView;
             }
             catch (Exception ex)
             {

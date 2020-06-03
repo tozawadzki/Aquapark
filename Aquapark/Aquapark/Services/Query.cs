@@ -13,14 +13,14 @@ namespace Aquapark.Services
         public static string GetEntrances =
             "SELECT * FROM Entrances ORDER BY Id";
 
-        public static string GetEntranceMethods =
-            "SELECT * FROM EntranceMethod ORDER BY Id";
+        public static string GetTransactionTypes =
+            "SELECT * FROM TransactionTypes ORDER BY Id";
 
         public static string GetExits =
             "SELECT * FROM Exits ORDER BY Id";
 
         public static string GetServices =
-            "SELECT * FROM Services ORDER BY Id";
+            "SELECT * FROM Services WHERE Services.Id NOT IN (5) ORDER BY Id"; //Nie chcemy wyświetlać "Spóźnienie"
 
         public static string GetWatches =
             "SELECT * FROM Watches ORDER BY Id";
@@ -75,31 +75,17 @@ namespace Aquapark.Services
             return query;
         }
 
-        public static string GetTransactionType(int TransactionTypeId)
-        {
-            var query =
-            $"SELECT TransactionType.name FROM transactiontype WHERE transactiontype.id = {TransactionTypeId}";
-            return query;
-        }
-
         public static string CreateTransaction(int Id, int ServiceId, int WatchId, int TransactionTypeId, string time)
         {
             var query =
-            $"INSERT INTO TRANSACTION (Id, Serviceid, TransactionTypeId, time) VALUES({Id}, {ServiceId}, {WatchId}, {TransactionTypeId}, '{time}'";
-            return query;
-        }
-
-        public static string GetListOfTransactions(int watchId)
-        {
-            var query =
-            $"SELECT * FROM transaction WHERE watchid = {watchId}";
+            $"INSERT INTO Transactions (Id, ServiceId, WatchId, TransactionTypeId, Time) VALUES({Id}, {ServiceId}, {WatchId}, {TransactionTypeId}, '{time}')";
             return query;
         }
 
         public static string DeleteTransactions(int watchId)
         {
             var query =
-            $"DELETE * FROM transaction WHERE watchid = {watchId}";
+            $"DELETE * FROM Transactions WHERE watchid = {watchId}";
             return query;
         }
 
@@ -124,22 +110,10 @@ namespace Aquapark.Services
             return query;
         }
 
-        // public static string GetFreeServicesId(int EntranceMethodId)
-        // {
-        //      Nie wiem jak zrobić
-        //}
-
         public static string GetCustomerId(int watchId)
         {
             var query =
             $"SELECT Watches.CustomerId FROM Watches WHERE Watches.Id = {watchId}";
-            return query;
-        }
-
-        public static string GetServiceId(int watchId)
-        {
-            var query =
-            $"SELECT Watches.ServiceId FROM Watches WHERE Watches.Id = {watchId}";
             return query;
         }
 
@@ -150,24 +124,10 @@ namespace Aquapark.Services
             return query;
         }
 
-        public static string CreateCharge(int chargeId, int amount, int watchId)
+        public static string CreateCharge(int chargeId, decimal amount, int watchId)
         {
             var query =
-            $"INSERT INTO CHARGES (Id, Amount, WatchId) VALUES({chargeId}, {amount}, {watchId})";
-            return query;
-        }
-
-        public static string GetSumOfWatchCharges(int watchId)
-        {
-            var query =
-            $"SELECT SUM(Charge.amount) FROM charge Where charge.WatchId = {watchId}";
-            return query;
-        }
-
-        public static string GetEntranceTime(int watchId)
-        {
-            var query =
-            $"SELECT Entrances.TIME FROM Entrances WHERE entrances.WatchId = {watchId}";
+                $"INSERT INTO CHARGES (Id, Amount, WatchId) VALUES({chargeId}, '{amount}', {watchId})";
             return query;
         }
 
@@ -175,13 +135,6 @@ namespace Aquapark.Services
         {
             var query =
             $"INSERT INTO EXITS (Id, WatchId, Time) VALUES({exitId}, {watchId}, '{time}')"; 
-            return query;
-        }
-
-        public static string GetExitTime(int watchId)
-        {
-            var query =
-            $"SELECT Exits.TIME FROM Exits WHERE Exits.WatchId = {watchId}";
             return query;
         }
 

@@ -35,7 +35,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.buttonGymEntry = new System.Windows.Forms.Button();
             this.buttonGymExit = new System.Windows.Forms.Button();
             this.buttonPoolExit = new System.Windows.Forms.Button();
@@ -44,8 +43,6 @@
             this.buttonSaunaEntry = new System.Windows.Forms.Button();
             this.buttonAquaparkExit = new System.Windows.Forms.Button();
             this.buttonAquaparkEntry = new System.Windows.Forms.Button();
-            this.buttonServiceExit = new System.Windows.Forms.Button();
-            this.buttonServiceEntry = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.chargeTextBox = new System.Windows.Forms.TextBox();
@@ -66,25 +63,27 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 30);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(198, 132);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.Size = new System.Drawing.Size(57, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Strefa:";
             // 
             // serviceLabel
             // 
             this.serviceLabel.AutoSize = true;
-            this.serviceLabel.Location = new System.Drawing.Point(55, 30);
+            this.serviceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.serviceLabel.Location = new System.Drawing.Point(263, 132);
             this.serviceLabel.Name = "serviceLabel";
-            this.serviceLabel.Size = new System.Drawing.Size(69, 13);
+            this.serviceLabel.Size = new System.Drawing.Size(100, 20);
             this.serviceLabel.TabIndex = 1;
             this.serviceLabel.Text = "serviceName";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(269, 9);
+            this.label3.Location = new System.Drawing.Point(153, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 13);
             this.label3.TabIndex = 2;
@@ -93,7 +92,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(356, 9);
+            this.label4.Location = new System.Drawing.Point(240, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 3;
@@ -102,7 +101,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(439, 9);
+            this.label5.Location = new System.Drawing.Point(323, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 13);
             this.label5.TabIndex = 4;
@@ -111,24 +110,15 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(516, 9);
+            this.label6.Location = new System.Drawing.Point(400, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 13);
             this.label6.TabIndex = 5;
             this.label6.Text = "Park wodny";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(604, 9);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(42, 13);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Cośtam";
-            // 
             // buttonGymEntry
             // 
-            this.buttonGymEntry.Location = new System.Drawing.Point(257, 25);
+            this.buttonGymEntry.Location = new System.Drawing.Point(141, 25);
             this.buttonGymEntry.Name = "buttonGymEntry";
             this.buttonGymEntry.Size = new System.Drawing.Size(75, 23);
             this.buttonGymEntry.TabIndex = 7;
@@ -138,7 +128,7 @@
             // 
             // buttonGymExit
             // 
-            this.buttonGymExit.Location = new System.Drawing.Point(257, 54);
+            this.buttonGymExit.Location = new System.Drawing.Point(141, 54);
             this.buttonGymExit.Name = "buttonGymExit";
             this.buttonGymExit.Size = new System.Drawing.Size(75, 23);
             this.buttonGymExit.TabIndex = 8;
@@ -148,7 +138,7 @@
             // 
             // buttonPoolExit
             // 
-            this.buttonPoolExit.Location = new System.Drawing.Point(338, 54);
+            this.buttonPoolExit.Location = new System.Drawing.Point(222, 54);
             this.buttonPoolExit.Name = "buttonPoolExit";
             this.buttonPoolExit.Size = new System.Drawing.Size(75, 23);
             this.buttonPoolExit.TabIndex = 10;
@@ -158,7 +148,7 @@
             // 
             // buttonPoolEntry
             // 
-            this.buttonPoolEntry.Location = new System.Drawing.Point(338, 25);
+            this.buttonPoolEntry.Location = new System.Drawing.Point(222, 25);
             this.buttonPoolEntry.Name = "buttonPoolEntry";
             this.buttonPoolEntry.Size = new System.Drawing.Size(75, 23);
             this.buttonPoolEntry.TabIndex = 9;
@@ -168,7 +158,7 @@
             // 
             // buttonSaunaExit
             // 
-            this.buttonSaunaExit.Location = new System.Drawing.Point(419, 54);
+            this.buttonSaunaExit.Location = new System.Drawing.Point(303, 54);
             this.buttonSaunaExit.Name = "buttonSaunaExit";
             this.buttonSaunaExit.Size = new System.Drawing.Size(75, 23);
             this.buttonSaunaExit.TabIndex = 12;
@@ -178,7 +168,7 @@
             // 
             // buttonSaunaEntry
             // 
-            this.buttonSaunaEntry.Location = new System.Drawing.Point(419, 25);
+            this.buttonSaunaEntry.Location = new System.Drawing.Point(303, 25);
             this.buttonSaunaEntry.Name = "buttonSaunaEntry";
             this.buttonSaunaEntry.Size = new System.Drawing.Size(75, 23);
             this.buttonSaunaEntry.TabIndex = 11;
@@ -188,7 +178,7 @@
             // 
             // buttonAquaparkExit
             // 
-            this.buttonAquaparkExit.Location = new System.Drawing.Point(504, 54);
+            this.buttonAquaparkExit.Location = new System.Drawing.Point(388, 54);
             this.buttonAquaparkExit.Name = "buttonAquaparkExit";
             this.buttonAquaparkExit.Size = new System.Drawing.Size(75, 23);
             this.buttonAquaparkExit.TabIndex = 14;
@@ -198,7 +188,7 @@
             // 
             // buttonAquaparkEntry
             // 
-            this.buttonAquaparkEntry.Location = new System.Drawing.Point(504, 25);
+            this.buttonAquaparkEntry.Location = new System.Drawing.Point(388, 25);
             this.buttonAquaparkEntry.Name = "buttonAquaparkEntry";
             this.buttonAquaparkEntry.Size = new System.Drawing.Size(75, 23);
             this.buttonAquaparkEntry.TabIndex = 13;
@@ -206,30 +196,10 @@
             this.buttonAquaparkEntry.UseVisualStyleBackColor = true;
             this.buttonAquaparkEntry.Click += new System.EventHandler(this.buttonAquaparkEntry_Click);
             // 
-            // buttonServiceExit
-            // 
-            this.buttonServiceExit.Location = new System.Drawing.Point(587, 54);
-            this.buttonServiceExit.Name = "buttonServiceExit";
-            this.buttonServiceExit.Size = new System.Drawing.Size(75, 23);
-            this.buttonServiceExit.TabIndex = 16;
-            this.buttonServiceExit.Text = "Wyjdź";
-            this.buttonServiceExit.UseVisualStyleBackColor = true;
-            this.buttonServiceExit.Click += new System.EventHandler(this.buttonServiceExit_Click);
-            // 
-            // buttonServiceEntry
-            // 
-            this.buttonServiceEntry.Location = new System.Drawing.Point(587, 25);
-            this.buttonServiceEntry.Name = "buttonServiceEntry";
-            this.buttonServiceEntry.Size = new System.Drawing.Size(75, 23);
-            this.buttonServiceEntry.TabIndex = 15;
-            this.buttonServiceEntry.Text = "Wejdź";
-            this.buttonServiceEntry.UseVisualStyleBackColor = true;
-            this.buttonServiceEntry.Click += new System.EventHandler(this.buttonServiceEntry_Click);
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(680, 16);
+            this.label9.Location = new System.Drawing.Point(481, 9);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(76, 13);
             this.label9.TabIndex = 19;
@@ -253,7 +223,7 @@
             // 
             // leaveButton
             // 
-            this.leaveButton.Location = new System.Drawing.Point(713, 230);
+            this.leaveButton.Location = new System.Drawing.Point(484, 234);
             this.leaveButton.Name = "leaveButton";
             this.leaveButton.Size = new System.Drawing.Size(75, 23);
             this.leaveButton.TabIndex = 23;
@@ -273,7 +243,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(12, 123);
+            this.label12.Location = new System.Drawing.Point(12, 16);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(86, 13);
             this.label12.TabIndex = 25;
@@ -281,7 +251,7 @@
             // 
             // adminButton
             // 
-            this.adminButton.Location = new System.Drawing.Point(23, 139);
+            this.adminButton.Location = new System.Drawing.Point(23, 32);
             this.adminButton.Name = "adminButton";
             this.adminButton.Size = new System.Drawing.Size(75, 23);
             this.adminButton.TabIndex = 26;
@@ -304,16 +274,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 9);
+            this.label2.Location = new System.Drawing.Point(153, 214);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 13);
+            this.label2.Size = new System.Drawing.Size(82, 13);
             this.label2.TabIndex = 30;
-            this.label2.Text = "Czas do wyjścia:";
+            this.label2.Text = "Pozostały czas:";
             // 
             // labelElapsed
             // 
             this.labelElapsed.AutoSize = true;
-            this.labelElapsed.Location = new System.Drawing.Point(687, 35);
+            this.labelElapsed.Location = new System.Drawing.Point(492, 30);
             this.labelElapsed.Name = "labelElapsed";
             this.labelElapsed.Size = new System.Drawing.Size(0, 13);
             this.labelElapsed.TabIndex = 31;
@@ -321,7 +291,7 @@
             // labelTimeLeft
             // 
             this.labelTimeLeft.AutoSize = true;
-            this.labelTimeLeft.Location = new System.Drawing.Point(104, 9);
+            this.labelTimeLeft.Location = new System.Drawing.Point(254, 214);
             this.labelTimeLeft.Name = "labelTimeLeft";
             this.labelTimeLeft.Size = new System.Drawing.Size(44, 13);
             this.labelTimeLeft.TabIndex = 32;
@@ -334,16 +304,16 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 54);
+            this.label8.Location = new System.Drawing.Point(153, 240);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 13);
+            this.label8.Size = new System.Drawing.Size(102, 13);
             this.label8.TabIndex = 33;
-            this.label8.Text = "Czas wyjścia:";
+            this.label8.Text = "Opuść obiekt przed:";
             // 
             // labelExitTime
             // 
             this.labelExitTime.AutoSize = true;
-            this.labelExitTime.Location = new System.Drawing.Point(104, 54);
+            this.labelExitTime.Location = new System.Drawing.Point(254, 240);
             this.labelExitTime.Name = "labelExitTime";
             this.labelExitTime.Size = new System.Drawing.Size(46, 13);
             this.labelExitTime.TabIndex = 34;
@@ -353,7 +323,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 265);
+            this.ClientSize = new System.Drawing.Size(570, 265);
             this.Controls.Add(this.labelExitTime);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.labelTimeLeft);
@@ -367,8 +337,6 @@
             this.Controls.Add(this.chargeTextBox);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.buttonServiceExit);
-            this.Controls.Add(this.buttonServiceEntry);
             this.Controls.Add(this.buttonAquaparkExit);
             this.Controls.Add(this.buttonAquaparkEntry);
             this.Controls.Add(this.buttonSaunaExit);
@@ -377,7 +345,6 @@
             this.Controls.Add(this.buttonPoolEntry);
             this.Controls.Add(this.buttonGymExit);
             this.Controls.Add(this.buttonGymEntry);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -386,7 +353,6 @@
             this.Controls.Add(this.label1);
             this.Name = "Aquapark";
             this.Text = "Aquapark";
-            this.Load += new System.EventHandler(this.Aquapark_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -400,7 +366,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button buttonGymEntry;
         private System.Windows.Forms.Button buttonGymExit;
         private System.Windows.Forms.Button buttonPoolExit;
@@ -409,8 +374,6 @@
         private System.Windows.Forms.Button buttonSaunaEntry;
         private System.Windows.Forms.Button buttonAquaparkExit;
         private System.Windows.Forms.Button buttonAquaparkEntry;
-        private System.Windows.Forms.Button buttonServiceExit;
-        private System.Windows.Forms.Button buttonServiceEntry;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox chargeTextBox;

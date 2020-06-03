@@ -34,7 +34,8 @@ namespace Aquapark
         private int CreateEntrance()
         {
             var customerId = CreateCustomer();
-            var watchId = CreateWatch(customerId);
+            CreateWatch(customerId);
+            var watchId = NewWatch.Id;
             if (customerId != 0)
             {
                 var entranceId = DbService.GetNewId("Entrances");
@@ -55,23 +56,22 @@ namespace Aquapark
             return 0;
         }
 
-        private int CreateCharge()
+        private void CreateCharge()
         {
             var newId = DbService.GetNewId("Charges");
-            var hours = NewEntrance.Hours;
-            var pricePerHour = Convert.ToInt32((DbService.GetValue(Query.GetPricePerHour(NewWatch.ServiceId))));
-            var chargeAmount = hours * pricePerHour;
+            var hours = Convert.ToDecimal(NewEntrance.Hours);
+            var discount = Convert.ToDecimal(DbService.GetValue(Query.GetDiscountAmount(NewCustomer.DiscountId)));
+            var pricePerHour = Convert.ToDecimal((DbService.GetValue(Query.GetPricePerHour(NewWatch.ServiceId))));
+            var chargeAmount = hours * pricePerHour * discount;
             DbService.InsertData(Query.CreateCharge(newId, chargeAmount, NewWatch.Id ));
-            return newId;
         }
 
-        private int CreateWatch(int customerId)
+        private void CreateWatch(int customerId)
         {
             var newId = DbService.GetNewId("Watches");
             var serviceId = service.SelectedIndex+1;
             NewWatch = new Watch(newId, customerId, serviceId);
             DbService.InsertData(Query.CreateWatch(newId, customerId, serviceId));
-            return newId;
         }
 
         private void entryButton_Click(object sender, EventArgs e)

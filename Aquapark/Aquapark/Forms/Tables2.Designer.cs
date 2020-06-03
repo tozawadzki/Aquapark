@@ -34,12 +34,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.servicesGridView = new System.Windows.Forms.DataGridView();
-            this.entranceMethodsGridView = new System.Windows.Forms.DataGridView();
+            this.transactionTypesGridView = new System.Windows.Forms.DataGridView();
             this.discountsGridView = new System.Windows.Forms.DataGridView();
             this.watchId = new System.Windows.Forms.Label();
             this.visitsGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.servicesGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.entranceMethodsGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transactionTypesGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.discountsGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.visitsGridView)).BeginInit();
             this.SuspendLayout();
@@ -79,9 +79,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.Location = new System.Drawing.Point(569, 360);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(195, 20);
+            this.label3.Size = new System.Drawing.Size(139, 20);
             this.label3.TabIndex = 26;
-            this.label3.Text = "Sposoby wejścia na obiekt";
+            this.label3.Text = "Rodzaje transakcji";
             // 
             // label2
             // 
@@ -101,13 +101,13 @@
             this.servicesGridView.Size = new System.Drawing.Size(435, 291);
             this.servicesGridView.TabIndex = 24;
             // 
-            // entranceMethodsGridView
+            // transactionTypesGridView
             // 
-            this.entranceMethodsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.entranceMethodsGridView.Location = new System.Drawing.Point(430, 382);
-            this.entranceMethodsGridView.Name = "entranceMethodsGridView";
-            this.entranceMethodsGridView.Size = new System.Drawing.Size(435, 291);
-            this.entranceMethodsGridView.TabIndex = 23;
+            this.transactionTypesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.transactionTypesGridView.Location = new System.Drawing.Point(430, 382);
+            this.transactionTypesGridView.Name = "transactionTypesGridView";
+            this.transactionTypesGridView.Size = new System.Drawing.Size(435, 291);
+            this.transactionTypesGridView.TabIndex = 23;
             // 
             // discountsGridView
             // 
@@ -146,7 +146,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.servicesGridView);
-            this.Controls.Add(this.entranceMethodsGridView);
+            this.Controls.Add(this.transactionTypesGridView);
             this.Controls.Add(this.discountsGridView);
             this.Controls.Add(this.watchId);
             this.Controls.Add(this.visitsGridView);
@@ -154,7 +154,7 @@
             this.Text = "Dane";
             this.Load += new System.EventHandler(this.Aquapark_Load);
             ((System.ComponentModel.ISupportInitialize)(this.servicesGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.entranceMethodsGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transactionTypesGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.discountsGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.visitsGridView)).EndInit();
             this.ResumeLayout(false);
@@ -170,7 +170,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView servicesGridView;
-        private System.Windows.Forms.DataGridView entranceMethodsGridView;
+        private System.Windows.Forms.DataGridView transactionTypesGridView;
         private System.Windows.Forms.DataGridView discountsGridView;
         private System.Windows.Forms.Label watchId;
         private System.Windows.Forms.DataGridView visitsGridView;
