@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Aquapark.Forms;
 using Aquapark.Models;
 using Aquapark.Services;
 
@@ -86,8 +87,8 @@ namespace Aquapark
 
         private void adminButton_Click(object sender, EventArgs e)
         {
-            Tables1 tables1Form = new Tables1();
-            tables1Form.Show();
+            Login loginForm = new Login();
+            loginForm.Show();
             this.Hide();
         }
 

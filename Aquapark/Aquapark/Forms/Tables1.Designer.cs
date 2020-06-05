@@ -54,16 +54,16 @@
             // customersGridView
             // 
             this.customersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customersGridView.Location = new System.Drawing.Point(12, 36);
+            this.customersGridView.Location = new System.Drawing.Point(469, 352);
             this.customersGridView.Name = "customersGridView";
-            this.customersGridView.Size = new System.Drawing.Size(435, 291);
+            this.customersGridView.Size = new System.Drawing.Size(467, 291);
             this.customersGridView.TabIndex = 0;
             // 
             // customersLabel
             // 
             this.customersLabel.AutoSize = true;
             this.customersLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.customersLabel.Location = new System.Drawing.Point(159, 9);
+            this.customersLabel.Location = new System.Drawing.Point(630, 330);
             this.customersLabel.Name = "customersLabel";
             this.customersLabel.Size = new System.Drawing.Size(138, 20);
             this.customersLabel.TabIndex = 2;
@@ -73,7 +73,7 @@
             // 
             this.watchId.AutoSize = true;
             this.watchId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.watchId.Location = new System.Drawing.Point(592, 13);
+            this.watchId.Location = new System.Drawing.Point(703, 13);
             this.watchId.Name = "watchId";
             this.watchId.Size = new System.Drawing.Size(129, 20);
             this.watchId.TabIndex = 4;
@@ -82,24 +82,24 @@
             // watchesGridView
             // 
             this.watchesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.watchesGridView.Location = new System.Drawing.Point(453, 36);
+            this.watchesGridView.Location = new System.Drawing.Point(596, 36);
             this.watchesGridView.Name = "watchesGridView";
-            this.watchesGridView.Size = new System.Drawing.Size(435, 291);
+            this.watchesGridView.Size = new System.Drawing.Size(359, 291);
             this.watchesGridView.TabIndex = 5;
             // 
             // chargesGridView
             // 
             this.chargesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.chargesGridView.Location = new System.Drawing.Point(894, 36);
+            this.chargesGridView.Location = new System.Drawing.Point(967, 36);
             this.chargesGridView.Name = "chargesGridView";
-            this.chargesGridView.Size = new System.Drawing.Size(435, 291);
+            this.chargesGridView.Size = new System.Drawing.Size(362, 291);
             this.chargesGridView.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(1057, 13);
+            this.label1.Location = new System.Drawing.Point(1099, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 20);
             this.label1.TabIndex = 7;
@@ -116,17 +116,17 @@
             // entrancesGridView
             // 
             this.entrancesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.entrancesGridView.Location = new System.Drawing.Point(453, 352);
+            this.entrancesGridView.Location = new System.Drawing.Point(12, 32);
             this.entrancesGridView.Name = "entrancesGridView";
-            this.entrancesGridView.Size = new System.Drawing.Size(435, 291);
+            this.entrancesGridView.Size = new System.Drawing.Size(574, 291);
             this.entrancesGridView.TabIndex = 9;
             // 
             // exitsGridView
             // 
             this.exitsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.exitsGridView.Location = new System.Drawing.Point(894, 352);
+            this.exitsGridView.Location = new System.Drawing.Point(967, 352);
             this.exitsGridView.Name = "exitsGridView";
-            this.exitsGridView.Size = new System.Drawing.Size(435, 291);
+            this.exitsGridView.Size = new System.Drawing.Size(348, 291);
             this.exitsGridView.TabIndex = 10;
             // 
             // label2
@@ -143,7 +143,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(592, 330);
+            this.label3.Location = new System.Drawing.Point(173, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(133, 20);
             this.label3.TabIndex = 12;
@@ -153,7 +153,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(1057, 330);
+            this.label4.Location = new System.Drawing.Point(1066, 329);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(130, 20);
             this.label4.TabIndex = 13;
