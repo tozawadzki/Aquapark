@@ -37,22 +37,32 @@ namespace Aquapark
             var customerId = CreateCustomer();
             CreateWatch(customerId);
             var watchId = NewWatch.Id;
-            if (customerId != 0)
+            try
             {
-                var entranceId = DbService.GetNewId("Entrances");
-                var isSuccess = DbService.InsertData(Query.CreateEntrance(entranceId, watchId, entranceMethod.SelectedIndex + 1, DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"), customerId, Convert.ToInt32(hours.Text)));
-                NewEntrance = new Entrances(entranceId, watchId, entranceMethod.SelectedIndex + 1, DateTime.Now,
-                    customerId, Convert.ToInt32(hours.Text));
-                if (isSuccess == 1)
+                if (customerId != 0)
                 {
-                    CreateCharge();
-                    return isSuccess;
-                }
-                else
-                {
-                    return 0;
+                    var entranceId = DbService.GetNewId("Entrances");
+                    var isSuccess = DbService.InsertData(Query.CreateEntrance(entranceId, watchId,
+                        entranceMethod.SelectedIndex + 1, DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"), customerId,
+                        Convert.ToInt32(hours.Text)));
+                    NewEntrance = new Entrances(entranceId, watchId, entranceMethod.SelectedIndex + 1, DateTime.Now,
+                        customerId, Convert.ToInt32(hours.Text));
+                    if (isSuccess == 1)
+                    {
+                        CreateCharge();
+                        return isSuccess;
+                    }
+                    else
+                    {
+                        return 0;
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
 
             return 0;
         }

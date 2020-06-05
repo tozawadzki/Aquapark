@@ -12,19 +12,29 @@ namespace Aquapark.Services
         private const string connectionData = "Data Source=XE;User Id=Aquapark;Password=7zmty6q2e;";
         public static DataSet GetData(string query)
         {
-            var connectionString = connectionData;
-            using (var connection = new OracleConnection(connectionString))
+            try
             {
-                connection.Open();
-                var command = new OracleCommand(query, connection);
-                var oracleDataAdapter = new OracleDataAdapter(command);
-                var dataSet = new DataSet();
-                oracleDataAdapter.Fill(dataSet);
-                connection.Close();
-                if (dataSet.Tables.Count > 0)
+                var connectionString = connectionData;
+                using (var connection = new OracleConnection(connectionString))
                 {
-                    return dataSet;
+                    connection.Open();
+                    var command = new OracleCommand(query, connection);
+                    var oracleDataAdapter = new OracleDataAdapter(command);
+                    var dataSet = new DataSet();
+                    oracleDataAdapter.Fill(dataSet);
+                    connection.Close();
+                    if (dataSet.Tables.Count > 0)
+                    {
+                        return dataSet;
+                    }
                 }
+            }
+            catch (OracleException ex)
+            {
+                string errorMessage = "Kod błędu: " + ex.ErrorCode + "\n" +
+                                      "Komunikat: " + ex.Message;
+                MessageBox.Show(errorMessage);
+                return null;
             }
             return null;
         }

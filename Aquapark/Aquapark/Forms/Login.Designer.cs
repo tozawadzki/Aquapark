@@ -41,6 +41,7 @@
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(119, 20);
             this.passwordTextBox.TabIndex = 8;
+            this.passwordTextBox.UseSystemPasswordChar = true;
             // 
             // labelLogin
             // 

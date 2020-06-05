@@ -20,7 +20,7 @@ namespace Aquapark.Services
             "SELECT * FROM Exits ORDER BY Id";
 
         public static string GetServices =
-            "SELECT * FROM Services WHERE Services.Id NOT IN (5) ORDER BY Id"; //Nie chcemy wyświetlać "Spóźnienie"
+            "SELECT * FROM Services WHERE Services.Id NOT IN (5) ORDER BY Id";
 
         public static string GetWatches =
             "SELECT * FROM Watches ORDER BY Id";
@@ -68,24 +68,10 @@ namespace Aquapark.Services
             return query;
         }
 
-        public static string GetCustomerDiscount(int customerId)
-        {
-            var query =
-            $"SELECT Discounts.Amount FROM Discounts WHERE Discounts.Id = ({customerId})";
-            return query;
-        }
-
         public static string CreateTransaction(int Id, int ServiceId, int WatchId, int TransactionTypeId, string time)
         {
             var query =
             $"INSERT INTO Transactions (Id, ServiceId, WatchId, TransactionTypeId, Time) VALUES({Id}, {ServiceId}, {WatchId}, {TransactionTypeId}, '{time}')";
-            return query;
-        }
-
-        public static string DeleteTransactions(int watchId)
-        {
-            var query =
-            $"DELETE * FROM Transactions WHERE watchid = {watchId}";
             return query;
         }
 
@@ -107,13 +93,6 @@ namespace Aquapark.Services
         {
             var query =
             $"SELECT Services.Name FROM Services WHERE Services.Id = {serviceId}";
-            return query;
-        }
-
-        public static string GetCustomerId(int watchId)
-        {
-            var query =
-            $"SELECT Watches.CustomerId FROM Watches WHERE Watches.Id = {watchId}";
             return query;
         }
 

@@ -113,5 +113,12 @@ namespace Aquapark
             aquaparkForm.Show();
             this.Hide();
         }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+            Entrance entranceForm = new Entrance();
+            entranceForm.Show();
+            this.Hide();
+        }
     }
 }

@@ -129,7 +129,7 @@ namespace Aquapark
             var watchId = CurrentWatch.Id;
             var serviceId = CurrentWatch.ServiceId;
             var customerId = CurrentCustomer.Id;
-            var exitPayment = (decimal)Convert.ToInt32(chargeTextBox.Text);
+            var exitPayment = Convert.ToDecimal(chargeTextBox.Text);
             DbService.InsertData(Query.CreateVisit(newId, watchId, serviceId, customerId, exitPayment));
             Exit = new Exit(newId, watchId, DateTime.Now);
         }

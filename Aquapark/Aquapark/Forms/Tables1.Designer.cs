@@ -43,6 +43,7 @@
             this.page2Button = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.backToMainButton = new System.Windows.Forms.Button();
+            this.buttonLogin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.customersGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.watchesGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chargesGridView)).BeginInit();
@@ -188,11 +189,22 @@
             this.backToMainButton.UseVisualStyleBackColor = true;
             this.backToMainButton.Click += new System.EventHandler(this.backToMainButton_Click);
             // 
+            // buttonLogin
+            // 
+            this.buttonLogin.Location = new System.Drawing.Point(1335, 559);
+            this.buttonLogin.Name = "buttonLogin";
+            this.buttonLogin.Size = new System.Drawing.Size(98, 39);
+            this.buttonLogin.TabIndex = 17;
+            this.buttonLogin.Text = "Logowanie";
+            this.buttonLogin.UseVisualStyleBackColor = true;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
+            // 
             // Tables1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1445, 653);
+            this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.backToMainButton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.page2Button);
@@ -239,6 +251,7 @@
         private System.Windows.Forms.Button page2Button;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button backToMainButton;
+        private System.Windows.Forms.Button buttonLogin;
     }
 }
 
